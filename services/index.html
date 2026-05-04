@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SIX7 Plumbing | Professional Plumbing Services in Colombo – 24/7 Emergency</title>
+  <meta name="description" content="Expert plumbing services in Colombo: emergency leak repair, drain cleaning, water heater, tank repair, water filters. 60-min arrival, transparent pricing.">
+  <meta name="keywords" content="plumber colombo, emergency plumber, leak detection, water tank repair, drain cleaning, commercial plumbing, whole house water filter">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Work+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F8FAFE; color: #1A2C3E; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Work Sans', sans-serif; }
+    .btn-call { background-color: #DC2626; transition: all 0.2s; }
+    .btn-call:hover { background-color: #B91C1C; }
+    .btn-whatsapp { background-color: #25D366; transition: all 0.2s; }
+    .btn-whatsapp:hover { background-color: #128C7E; }
+    .service-card { transition: transform 0.2s, box-shadow 0.2s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15); }
+    details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: '\f0fe'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 1rem; color: #F97316; }
+    details[open] summary::before { content: '\f146'; }
+    .location-badge:hover { background-color: #EFF6FF; border-color: #2563EB; }
+    /* Mobile Menu Styles */
+    .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: 85%; max-width: 320px; background: white; z-index: 1000; transform: translateX(100%); transition: transform 0.3s ease-in-out; padding: 1.5rem; box-shadow: -5px 0 30px rgba(0,0,0,0.1); overflow-y: auto; }
+    .mobile-menu.open { transform: translateX(0); }
+    .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; display: none; }
+    .menu-overlay.active { display: block; }
+    @media (min-width: 768px) { .mobile-menu, .menu-overlay { display: none; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Professional Plumbing Services Colombo",
+    "description": "32+ plumbing services in Colombo & Western Province. Emergency response, leak detection, tank repair, water filters. Transparent hourly billing.",
+    "url": "https://plumbing.six7.lk/services/",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "item": {"@type": "Service", "name": "Emergency Plumbing"}},
+        {"@type": "ListItem", "position": 2, "item": {"@type": "Service", "name": "Leak Detection"}},
+        {"@type": "ListItem", "position": 3, "item": {"@type": "Service", "name": "Water Tank Repair"}},
+        {"@type": "ListItem", "position": 4, "item": {"@type": "Service", "name": "Whole House Water Filter"}}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- EMERGENCY BANNER -->
+<div class="bg-red-600 text-white text-center py-2 px-4 text-sm font-medium">
+  <i class="fas fa-exclamation-triangle mr-1"></i> 24/7 EMERGENCY: <a href="tel:+94758244216" class="underline font-bold">+94 75 824 4216</a>
+  <span class="ml-2 text-xs opacity-90">• Callout fee applies to all dispatches (LKR 2,500)</span>
+</div>
+
+<!-- NAVIGATION with Hamburger Menu -->
+<nav class="border-b bg-white sticky top-0 z-50 shadow-sm">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="font-black text-2xl tracking-tighter text-[#0A2647] font-heading"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7.PLUMBING</a>
+    <ul class="hidden md:flex gap-6 text-sm font-medium">
+      <li><a href="/" class="hover:text-[#F97316] transition">Home</a></li>
+      <li><a href="/services/" class="text-[#F97316] border-b-2 border-[#F97316] pb-1">Services</a></li>
+      <li><a href="/commercial/" class="hover:text-[#F97316] transition">Commercial</a></li>
+      <li><a href="/areas/" class="hover:text-[#F97316] transition">Areas</a></li>
+      <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing</a></li>
+      <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
+      <li><a href="/contact/" class="hover:text-[#F97316] transition">Contact</a></li>
+    </ul>
+    <div class="flex gap-2">
+      <a href="tel:+94758244216" class="btn-call text-sm px-3 py-2 rounded-full text-white font-semibold shadow-sm inline-flex items-center gap-1"><i class="fas fa-phone-alt"></i> Call Now</a>
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-[#0A2647] ml-2"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Slide-out -->
+<div id="mobileMenuOverlay" class="menu-overlay"></div>
+<div id="mobileMenu" class="mobile-menu">
+  <div class="flex justify-between items-center border-b pb-3 mb-4">
+    <span class="font-bold text-xl text-[#0A2647]"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7</span>
+    <button id="closeMobileMenu" class="text-2xl text-[#0A2647]"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="space-y-4 text-base font-medium">
+    <li><a href="/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-home w-6"></i> Home</a></li>
+    <li><a href="/services/" class="block py-2 text-[#F97316] font-bold"><i class="fas fa-wrench w-6"></i> Services</a></li>
+    <li><a href="/commercial/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-building w-6"></i> Commercial</a></li>
+    <li><a href="/areas/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-map-marker-alt w-6"></i> Areas</a></li>
+    <li><a href="/pricing/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-tag w-6"></i> Pricing</a></li>
+    <li><a href="/faq/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-question-circle w-6"></i> FAQ</a></li>
+    <li><a href="/contact/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-envelope w-6"></i> Contact</a></li>
+    <li><a href="/review/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-star w-6"></i> Leave a Review</a></li>
+    <li class="pt-4"><a href="tel:+94758244216" class="btn-call text-white text-center block py-2 rounded-full"><i class="fas fa-phone-alt mr-1"></i> Emergency Call</a></li>
+  </ul>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="container mx-auto px-4 py-3 text-sm text-gray-600">
+  <a href="/" class="hover:underline">Home</a> <span class="mx-2">›</span> <span class="font-medium text-[#0A2647]">Services</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="py-10 bg-gradient-to-r from-blue-50 to-white">
+  <div class="container mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#0A2647]">Professional Plumbing Services in Colombo — Fast, Affordable & Reliable</h1>
+    <p class="text-lg text-gray-700 mb-6 max-w-4xl">SIX7 Plumbing delivers expert plumbing services across Colombo and the Western Province. Whether you need emergency leak repair at 2AM, a budget bathroom renovation, or commercial plumbing for your office, our direct-work model means fair prices with no middlemen fees. All jobs come with a written quote before work begins, and we offer both economy and premium parts options to fit your budget. 24/7 availability. 60-minute arrival guarantee in central Colombo.</p>
+    <p class="text-sm text-gray-500 mb-5">Serving <strong class="text-[#0A2647]">plumbers near me</strong>, <strong class="text-[#0A2647]">plumber colombo</strong>, <strong class="text-[#0A2647]">water tank repair near me</strong>, <strong class="text-[#0A2647]">water heater repair</strong>, and <strong class="text-[#0A2647]">plumbing services near me</strong> searches across Dehiwala, Piliyandala, Kotte, Battaramulla & Maharagama.</p>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <a href="https://wa.me/94758244216?text=SERVICE%20INQUIRY%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-6 rounded-full text-center inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp for Quote</a>
+      <a href="tel:+94758244216" class="bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-full text-center inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Now: +94 75 824 4216</a>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY PLUMBING SERVICES -->
+<section class="py-12 border-t">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-bolt text-red-500 mr-2"></i> Emergency Plumbing Services (24/7)</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Burst pipe repair & flood control</h3><p class="text-sm text-gray-500 mb-2">Keywords: burst pipe repair colombo, flood control plumber, emergency plumbing near me</p><a href="https://wa.me/94758244216?text=EMERGENCY%20BURST%20PIPE%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Midnight leak response (no extra charge)</h3><p class="text-sm text-gray-500 mb-2">Keywords: 24/7 plumber colombo, midnight plumbing repair, emergency leak fix</p><a href="https://wa.me/94758244216?text=EMERGENCY%20LEAK%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Sewage backup emergency cleanup</h3><p class="text-sm text-gray-500 mb-2">Keywords: sewage backup colombo, emergency drain cleaning, sewer cleanup near me</p><a href="https://wa.me/94758244216?text=EMERGENCY%20SEWER%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">No-water-supply troubleshooting</h3><p class="text-sm text-gray-500 mb-2">Keywords: no water colombo, water supply repair, plumber near me emergency</p><a href="https://wa.me/94758244216?text=EMERGENCY%20NO%20WATER%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Gas leak detection & safety shutdown</h3><p class="text-sm text-gray-500 mb-2">Keywords: gas leak plumber colombo, safety shutdown, emergency gas repair</p><a href="https://wa.me/94758244216?text=EMERGENCY%20GAS%20LEAK%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Priority dispatch for Colombo 1-10 suburbs</h3><p class="text-sm text-gray-500 mb-2">Keywords: plumber colombo 1, emergency plumber dehiwala, priority plumbing service</p><a href="https://wa.me/94758244216?text=EMERGENCY%20PRIORITY%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <div class="inline-flex items-center gap-2 bg-red-50 px-4 py-2 rounded-full"><i class="fas fa-clock text-red-600"></i><span class="text-sm font-medium">24/7 hotline: +94 75 824 4216</span></div>
+  </div>
+</section>
+
+<!-- LEAK DETECTION & REPAIR -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-tint text-[#F97316] mr-2"></i> Leak Detection & Repair</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Hidden leak detection (acoustic & thermal)</h3><p class="text-sm text-gray-500 mb-2">Keywords: leak detection colombo, hidden water leak, thermal imaging plumber</p><a href="/leak-detection/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Exposed pipe repair & replacement</h3><p class="text-sm text-gray-500 mb-2">Keywords: plumbing pipe repair colombo, pipe replacement, PVC copper pipe fix</p><a href="/pipe-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Wall/floor leak tracing without damage</h3><p class="text-sm text-gray-500 mb-2">Keywords: non-destructive leak detection, wall leak repair colombo</p><a href="https://wa.me/94758244216?text=QUOTE%20LEAK%20DETECTION%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Pressure testing & system diagnostics</h3><p class="text-sm text-gray-500 mb-2">Keywords: plumbing pressure test colombo, system diagnostics</p><a href="https://wa.me/94758244216?text=QUOTE%20PRESSURE%20TEST%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <div class="flex justify-between items-center"><p class="font-bold text-lg">From LKR 3,500/hr</p><a href="https://wa.me/94758244216?text=QUOTE%20LEAK%20REPAIR%20Colombo" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Quote</a></div>
+    <p class="text-xs text-gray-400 mt-3"><i class="fas fa-info-circle mr-1"></i> Callout fee LKR 2,500 applies to all dispatches regardless of repair outcome. Full quote provided before work begins.</p>
+  </div>
+</section>
+
+<!-- DRAIN & TOILET SERVICES -->
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-toilet text-[#F97316] mr-2"></i> Drain & Toilet Services</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Unclog blocked drains, sinks & floor traps</h3><p class="text-sm text-gray-500 mb-2">Keywords: drain cleaning colombo, blocked drain plumber near me</p><a href="/drain-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Toilet repair: running, leaking, not flushing</h3><p class="text-sm text-gray-500 mb-2">Keywords: toilet repair colombo, running toilet fix, cistern repair</p><a href="/toilet-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Sewer line cleaning & rodding</h3><p class="text-sm text-gray-500 mb-2">Keywords: sewer cleaning colombo, sewer rodding, main line unclog</p><a href="/sewer-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">High-pressure jetting for stubborn blockages</h3><p class="text-sm text-gray-500 mb-2">Keywords: drain jetting colombo, high pressure drain cleaning</p><a href="https://wa.me/94758244216?text=QUOTE%20DRAIN%20JETTING%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <div class="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full"><i class="fas fa-tachometer-alt text-blue-600"></i><span class="text-sm font-medium">45 min average response time</span></div>
+  </div>
+</section>
+
+<!-- TAP, FAUCET & FIXTURE INSTALLATION -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-faucet text-[#F97316] mr-2"></i> Tap, Faucet & Fixture Installation</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">New tap & mixer installation (kitchen/bath)</h3><p class="text-sm text-gray-500 mb-2">Keywords: tap installation colombo, mixer tap fitting, bathroom plumbing</p><a href="/tap-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Faucet repair: dripping, leaking, low pressure</h3><p class="text-sm text-gray-500 mb-2">Keywords: tap repair colombo, dripping tap fix, faucet cartridge replacement</p><a href="/tap-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Shower head & hand shower upgrades</h3><p class="text-sm text-gray-500 mb-2">Keywords: shower installation colombo, rainfall shower fit</p><a href="/shower-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Customer-supplied fixture installation (labor-only)</h3><p class="text-sm text-gray-500 mb-2">Keywords: labor-only plumbing colombo, bring your own parts</p><a href="https://wa.me/94758244216?text=QUOTE%20LABOR%20ONLY%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <p class="font-bold">Labor from LKR 3,500/hr | <a href="https://wa.me/94758244216?text=QUOTE%20TAP%20INSTALL%20Colombo" class="text-green-600"><i class="fab fa-whatsapp mr-1"></i> Get Quote via WhatsApp</a></p>
+  </div>
+</section>
+
+<!-- WATER TANK, PUMP & SUPPLY SYSTEMS (including New Filters) -->
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-water text-[#F97316] mr-2"></i> Water Tank, Pump & Supply Systems</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Water pump repair & replacement (all brands)</h3><p class="text-sm text-gray-500 mb-2">Keywords: water pump repair colombo, pump replacement service</p><a href="/sump-pump-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Overhead & underground tank installation</h3><p class="text-sm text-gray-500 mb-2">Keywords: water tank installation colombo, water tank repair near me</p><a href="/water-tank-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Tank cleaning & sediment removal</h3><p class="text-sm text-gray-500 mb-2">Keywords: water tank cleaning colombo, tank sanitizing service</p><a href="/water-tank-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Whole House Water Filter for Hard Water & Iron</h3><p class="text-sm text-gray-500 mb-2">Keywords: whole house water filter colombo, hard water filter installation</p><a href="/whole-house-water-filter/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Home Drinking Water Purification (RO systems)</h3><p class="text-sm text-gray-500 mb-2">Keywords: drinking water purification colombo, RO system installation</p><a href="/drinking-water-purification/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Rainwater harvesting plumbing integration</h3><p class="text-sm text-gray-500 mb-2">Keywords: rainwater harvesting colombo, eco plumbing system</p><a href="https://wa.me/94758244216?text=QUOTE%20RAINWATER%20SYSTEM%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <div class="flex justify-between items-center"><span class="font-bold">Repairs from LKR 3,500/hr</span><a href="tel:+94758244216" class="text-[#0A2647] font-medium"><i class="fas fa-phone-alt mr-1"></i> Call for free estimate</a></div>
+  </div>
+</section>
+
+<!-- COMMERCIAL & INDUSTRIAL PLUMBING -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-building text-[#F97316] mr-2"></i> Commercial & Industrial Plumbing</h2>
+    <div class="grid md:grid-cols-2 gap-5 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Office building plumbing maintenance contracts</h3><p class="text-sm text-gray-500 mb-2">Keywords: commercial plumber colombo, office plumbing maintenance</p><a href="/commercial/" class="text-[#F97316] text-sm font-medium">Commercial inquiry <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Restaurant & hotel kitchen plumbing systems</h3><p class="text-sm text-gray-500 mb-2">Keywords: restaurant plumbing colombo, hotel kitchen plumber</p><a href="/commercial/" class="text-[#F97316] text-sm font-medium">Commercial inquiry <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Factory pipe welding & industrial supply lines</h3><p class="text-sm text-gray-500 mb-2">Keywords: industrial plumber colombo, pipe welding service</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20INDUSTRIAL%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">After-hours work to minimize disruption</h3><p class="text-sm text-gray-500 mb-2">Keywords: after-hours plumber colombo, emergency commercial plumbing</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20AFTER%20HOURS%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
+    </div>
+    <p class="font-bold">Bulk pricing available | <a href="/commercial/" class="text-[#F97316]"><i class="fas fa-chart-line mr-1"></i> Request commercial quote →</a></p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE SIX7 -->
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8 text-center text-[#0A2647]">Why Choose SIX7 Plumbing?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-handshake text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Direct Work Model</h3><p class="text-sm text-gray-500">No agency fees, no middlemen. You pay for the job, not the platform.</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-tag text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Transparent Pricing</h3><p class="text-sm text-gray-500">Written quote before any work starts. No hidden charges.</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-clock text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">24/7 Emergency Response</h3><p class="text-sm text-gray-500">Real humans answer at 1AM, weekends, holidays.</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-truck-fast text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">60-Minute Arrival</h3><p class="text-sm text-gray-500">For Colombo 1-10. Outer suburbs: 90 minutes max.</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-medal text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Workmanship Warranty</h3><p class="text-sm text-gray-500">90-day guarantee on all repairs. Free call-back.</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-map-marked-alt text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Local Expertise</h3><p class="text-sm text-gray-500">We know Colombo's older plumbing systems and monsoon challenges.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION BADGES (SERVICE AREAS) -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]"><i class="fas fa-map-marker-alt text-[#F97316] mr-2"></i> Service Areas — Plumbers Near You</h2>
+    <p class="text-center text-sm text-gray-500 mb-6 max-w-2xl mx-auto">We cover the entire Western Province with fast arrival times. Searching for <strong>"plumber near me"</strong>? We're likely 15-30 minutes away.</p>
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      <a href="/colombo/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 1-15</a>
+      <a href="/kotte/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Kotte</a>
+      <a href="/battaramulla/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Battaramulla</a>
+      <a href="/dehiwala/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Dehiwala</a>
+      <a href="/mt-lavinia/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Mount Lavinia</a>
+      <a href="/nugegoda/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Nugegoda</a>
+      <a href="/maharagama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Maharagama</a>
+      <a href="/piliyandala/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Piliyandala</a>
+      <a href="/homagama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Homagama</a>
+      <a href="/kaduwela/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Kaduwela</a>
+      <a href="/padukka/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Padukka</a>
+      <a href="/rathmalana/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Rathmalana</a>
+      <a href="/boralasgamuwa/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Boralesgamuwa</a>
+      <a href="/moratuwa/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Moratuwa</a>
+    </div>
+    <div class="text-center"><a href="/areas/" class="text-[#F97316] font-medium">View all service areas <i class="fas fa-arrow-right ml-1"></i></a></div>
+  </div>
+</section>
+
+<!-- QUICK QUOTE FORM -->
+<section class="py-12">
+  <div class="container mx-auto px-4 max-w-2xl">
+    <h2 class="text-2xl font-bold mb-6 text-center">Need a Plumbing Service?</h2>
+    <form action="https://formsubmit.co/plumbing@six7.lk" method="POST" class="space-y-4 bg-white border rounded-xl p-6 shadow-sm">
+      <input type="hidden" name="_subject" value="Services Page Request - plumbing.six7.lk">
+      <input type="hidden" name="_next" value="https://plumbing.six7.lk/thank-you/">
+      <input type="hidden" name="_autoresponse" value="Thanks! We'll WhatsApp you within 15 mins. - Six7 Plumbing">
+      <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded-lg">
+      <input type="tel" name="phone" placeholder="Phone Number" pattern="^\+94[0-9]{9}$" required class="w-full px-4 py-2 border rounded-lg">
+      <select name="service_type" required class="w-full px-4 py-2 border rounded-lg">
+        <option value="">Select Service</option>
+        <option value="emergency">Emergency Plumbing</option>
+        <option value="leak-detection">Leak Detection</option>
+        <option value="drain-cleaning">Drain Cleaning</option>
+        <option value="tap-installation">Tap Installation</option>
+        <option value="water-heater-repair">Water Heater Repair</option>
+        <option value="water-tank-repair">Water Tank Repair</option>
+        <option value="whole-house-filter">Whole House Water Filter</option>
+        <option value="commercial">Commercial Project</option>
+      </select>
+      <input type="text" name="suburb" placeholder="Your Suburb" required class="w-full px-4 py-2 border rounded-lg">
+      <textarea name="message" placeholder="Describe your plumbing issue" rows="3" class="w-full px-4 py-2 border rounded-lg"></textarea>
+      <label class="flex items-start gap-2 text-sm"><input type="checkbox" name="terms" required class="mt-1"><span>I agree to the <a href="/disclaimer/" class="underline text-[#F97316]" target="_blank">Pricing Policy & Zero-Tolerance Disclaimer</a>. Callout fee LKR 2,500 applies to all dispatches.</span></label>
+      <button type="submit" class="w-full bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 rounded-xl transition"><i class="fas fa-paper-plane mr-2"></i> Request Service</button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="py-12 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions — Plumbing Services Colombo</h2>
+    <div class="space-y-4">
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">How much does a plumber cost in Colombo?</summary><p class="mt-2 text-sm text-gray-600">Service call from LKR 2,500 (callout fee applies). Most repairs range LKR 3,500–15,000. Written quote before starting. Hourly labor LKR 3,500/hr.</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Do you charge extra for nights or weekends?</summary><p class="mt-2 text-sm text-gray-600">No extra charge for emergency timing. Same fair pricing, 24/7. Callout fee applies to all dispatches regardless of outcome.</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Can I use my own parts to save money?</summary><p class="mt-2 text-sm text-gray-600">Yes. Labor-only installation available. Warranty covers workmanship only when using our parts. Labor billed hourly from LKR 3,500/hr.</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Are your plumbers licensed and insured?</summary><p class="mt-2 text-sm text-gray-600">Yes. All SIX7 plumbers are vetted, experienced, and covered under public liability insurance. Verified ID on arrival.</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">What if I'm not happy with the work?</summary><p class="mt-2 text-sm text-gray-600">90-day workmanship warranty. If same issue recurs, we return free. Pay after service model.</p></details>
+    </div>
+    <div class="text-center mt-8"><a href="/faq/" class="text-[#F97316] font-medium">View all FAQs <i class="fas fa-arrow-right ml-1"></i></a></div>
+  </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section class="py-12 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-6">Ready to Fix Your Plumbing Issue?</h2>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+      <a href="tel:+94758244216" class="bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-full inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Now: +94 75 824 4216 (24/7)</a>
+      <a href="https://wa.me/94758244216?text=SERVICE%20INQUIRY%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-6 rounded-full inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp: Send photos for quote</a>
+    </div>
+    <p class="text-sm text-gray-500 mb-4"><i class="fas fa-envelope mr-1"></i> Email: plumbing@six7.lk</p>
+    <div class="flex flex-wrap justify-center gap-2 text-sm"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Free written quotes</span><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-receipt mr-1"></i> Callout fee LKR 2,500</span><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-shield-alt mr-1"></i> 90-day warranty</span></div>
+  </div>
+</section>
+
+<!-- EXTENDED FULL CONTENT FOOTER -->
+<footer class="bg-[#0A2647] text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-10 mb-8">
+      <!-- Areas We Serve -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-map-marker-alt text-[#F97316]"></i> Areas We Serve</h4>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm opacity-80">
+          <li><a href="/colombo/" class="hover:text-[#F97316] transition">Colombo</a></li>
+          <li><a href="/dehiwala/" class="hover:text-[#F97316] transition">Dehiwala</a></li>
+          <li><a href="/piliyandala/" class="hover:text-[#F97316] transition">Piliyandala</a></li>
+          <li><a href="/kotte/" class="hover:text-[#F97316] transition">Kotte</a></li>
+          <li><a href="/battaramulla/" class="hover:text-[#F97316] transition">Battaramulla</a></li>
+          <li><a href="/maharagama/" class="hover:text-[#F97316] transition">Maharagama</a></li>
+          <li><a href="/homagama/" class="hover:text-[#F97316] transition">Homagama</a></li>
+          <li><a href="/kaduwela/" class="hover:text-[#F97316] transition">Kaduwela</a></li>
+          <li><a href="/nugegoda/" class="hover:text-[#F97316] transition">Nugegoda</a></li>
+          <li><a href="/padukka/" class="hover:text-[#F97316] transition">Padukka</a></li>
+          <li><a href="/rathmalana/" class="hover:text-[#F97316] transition">Rathmalana</a></li>
+          <li><a href="/mt-lavinia/" class="hover:text-[#F97316] transition">Mt Lavinia</a></li>
+          <li><a href="/boralasgamuwa/" class="hover:text-[#F97316] transition">Boralesgamuwa</a></li>
+          <li><a href="/moratuwa/" class="hover:text-[#F97316] transition">Moratuwa</a></li>
+        </ul>
+      </div>
+      <!-- Services We Offer (Categorized) -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-wrench text-[#F97316]"></i> Services</h4>
+        <div class="grid grid-cols-1 gap-1 text-sm opacity-80">
+          <div><span class="font-semibold text-[#F97316]">Leak & Pipe:</span> <a href="/leak-detection/" class="hover:text-[#F97316]">Detection</a>, <a href="/leak-repair/" class="hover:text-[#F97316]">Repair</a>, <a href="/pipe-repair/" class="hover:text-[#F97316]">Pipe Repair</a></div>
+          <div><span class="font-semibold text-[#F97316]">Fixtures:</span> <a href="/tap-installation/" class="hover:text-[#F97316]">Tap Install</a>, <a href="/tap-repair/" class="hover:text-[#F97316]">Repair</a>, <a href="/shower-installation/" class="hover:text-[#F97316]">Shower</a>, <a href="/toilet-installation/" class="hover:text-[#F97316]">Toilet</a></div>
+          <div><span class="font-semibold text-[#F97316]">Water Heating:</span> <a href="/water-heater-installation/" class="hover:text-[#F97316]">Heater Install</a>, <a href="/water-heater-repair/" class="hover:text-[#F97316]">Repair</a></div>
+          <div><span class="font-semibold text-[#F97316]">Drain & Sewer:</span> <a href="/drain-cleaning/" class="hover:text-[#F97316]">Drain Cleaning</a>, <a href="/sewer-cleaning/" class="hover:text-[#F97316]">Sewer Cleaning</a></div>
+          <div><span class="font-semibold text-[#F97316]">Tanks & Pumps:</span> <a href="/water-tank-installation/" class="hover:text-[#F97316]">Tank Install</a>, <a href="/water-tank-cleaning/" class="hover:text-[#F97316]">Cleaning</a>, <a href="/sump-pump-repair/" class="hover:text-[#F97316]">Pump Repair</a></div>
+          <div><span class="font-semibold text-[#F97316]">Specialized:</span> <a href="/whole-house-water-filter/" class="hover:text-[#F97316]">Water Filter</a>, <a href="/drinking-water-purification/" class="hover:text-[#F97316]">RO Systems</a></div>
+          <div><a href="/services/" class="text-[#F97316] text-xs">+ all 32 services →</a></div>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-link text-[#F97316]"></i> Quick Links</h4>
+        <ul class="space-y-2 text-sm opacity-80">
+          <li><a href="/emergency/" class="hover:text-[#F97316] transition">Emergency Hub</a></li>
+          <li><a href="/services/" class="hover:text-[#F97316] transition">Services Index</a></li>
+          <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing & Callout</a></li>
+          <li><a href="/areas/" class="hover:text-[#F97316] transition">Coverage & ETAs</a></li>
+          <li><a href="/about-us/" class="hover:text-[#F97316] transition">Trust + Team</a></li>
+          <li><a href="/disclaimer/" class="hover:text-[#F97316] transition">Terms & Policy</a></li>
+          <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
+          <li><a href="/review/" class="hover:text-[#F97316] transition">Leave a Review</a></li>
+        </ul>
+      </div>
+      <!-- Contact Us -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-envelope text-[#F97316]"></i> Contact Us</h4>
+        <ul class="space-y-3 text-sm opacity-80">
+          <li><a href="tel:+94758244216" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a></li>
+          <li><a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-envelope"></i> plumbing@six7.lk</a></li>
+          <li><a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+          <li><a href="/contact/" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-paper-plane"></i> Contact Form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 text-center text-xs opacity-70">
+      <p>© 2026 SIX7 Plumbing. All rights reserved. Callout fee LKR 2,500 applies to all dispatches.</p>
+      <p class="mt-2"><i class="fas fa-heart text-red-400"></i> Made with <i class="fas fa-heart text-red-400"></i> by SIX7 Team</p>
+      <p class="mt-2"><a href="/disclaimer/" class="underline hover:opacity-100">Pricing Policy & Disclaimer</a> • <a href="/areas/" class="underline hover:opacity-100">Full Coverage Map</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  const closeBtn = document.getElementById('closeMobileMenu');
+  function openMenu() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+  if(menuBtn) menuBtn.addEventListener('click', openMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+</script>
+</body>
+</html>
