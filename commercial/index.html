@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Commercial Plumbing Colombo | Office, Hotel & Industrial Plumbing – SIX7 Plumbing</title>
+  <meta name="description" content="Commercial plumbing services in Colombo. Office maintenance, restaurant kitchen plumbing, hotel bathroom fit-outs, industrial pipe repair. Maintenance contracts & emergency response. Callout fee applies.">
+  <meta name="keywords" content="commercial plumber colombo, office plumbing maintenance, restaurant plumbing colombo, hotel kitchen plumber, industrial plumbing service, business plumbing, facility management plumbing">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Work+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F8FAFE; color: #1A2C3E; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Work Sans', sans-serif; }
+    .btn-call { background-color: #DC2626; transition: all 0.2s; }
+    .btn-call:hover { background-color: #B91C1C; }
+    .btn-whatsapp { background-color: #25D366; transition: all 0.2s; }
+    .btn-whatsapp:hover { background-color: #128C7E; }
+    .location-badge:hover { background-color: #EFF6FF; border-color: #2563EB; }
+    details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: '\f0fe'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 1rem; color: #F97316; }
+    details[open] summary::before { content: '\f146'; }
+    .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: 85%; max-width: 320px; background: white; z-index: 1000; transform: translateX(100%); transition: transform 0.3s ease-in-out; padding: 1.5rem; box-shadow: -5px 0 30px rgba(0,0,0,0.1); overflow-y: auto; }
+    .mobile-menu.open { transform: translateX(0); }
+    .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; display: none; }
+    .menu-overlay.active { display: block; }
+    @media (min-width: 768px) { .mobile-menu, .menu-overlay { display: none; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "PlumbingService"],
+    "name": "Six7 Commercial Plumbing",
+    "description": "Commercial and industrial plumbing services in Colombo & Western Province. Maintenance contracts, emergency response, project-based plumbing. Transparent pricing.",
+    "url": "https://plumbing.six7.lk/commercial/",
+    "telephone": "+94758244216",
+    "priceRange": "LKR 8,000 - LKR 120,000+",
+    "address": {"@type": "PostalAddress", "addressLocality": "Mount Lavinia", "addressRegion": "Western Province", "addressCountry": "LK"},
+    "areaServed": ["Colombo", "Kotte", "Battaramulla", "Maharagama", "Kelaniya", "Negombo"],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Preventive Maintenance Contracts"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Emergency Response Retainers"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Project-Based Plumbing"}}
+    ],
+    "hasFAQ": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Do you offer invoicing and PO payment terms?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Formal invoices, accept POs, Net-15/30 terms for contract clients."}},
+        {"@type": "Question", "name": "Can you work after hours to avoid disruption?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. After-hours, weekends, holidays standard for commercial clients."}},
+        {"@type": "Question", "name": "What if we have multiple locations?", "acceptedAnswer": {"@type": "Answer", "text": "Multi-site contracts with consolidated billing, volume discounts, one account manager."}}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- STICKY EMERGENCY BANNER -->
+<div id="emergencyBanner" class="bg-red-600 text-white text-center py-2 px-4 text-sm font-medium sticky top-0 z-50">
+  <i class="fas fa-exclamation-triangle mr-1"></i> 24/7 EMERGENCY SERVICE: <a href="tel:+94758244216" class="underline font-bold">+94 75 824 4216</a>
+  <span class="ml-2 text-xs opacity-90">• Callout fee applies to ALL dispatches regardless of outcome</span>
+  <button onclick="document.getElementById('emergencyBanner').style.display='none'; localStorage.setItem('commercialDismissed','1')" class="ml-3 text-xs font-bold bg-red-700 px-2 py-0.5 rounded"><i class="fas fa-times"></i> Dismiss</button>
+</div>
+<script>if(localStorage.getItem('commercialDismissed')==='1') document.getElementById('emergencyBanner').style.display='none';</script>
+
+<!-- NAVIGATION with Hamburger -->
+<nav class="border-b bg-white sticky top-0 z-40 shadow-sm">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="font-black text-2xl tracking-tighter text-[#0A2647] font-heading"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7.PLUMBING</a>
+    <ul class="hidden md:flex gap-6 text-sm font-medium">
+      <li><a href="/" class="hover:text-[#F97316] transition">Home</a></li>
+      <li><a href="/services/" class="hover:text-[#F97316] transition">Services</a></li>
+      <li><a href="/commercial/" class="text-[#F97316] border-b-2 border-[#F97316] pb-1 font-bold">Commercial</a></li>
+      <li><a href="/areas/" class="hover:text-[#F97316] transition">Areas</a></li>
+      <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing</a></li>
+      <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
+      <li><a href="/contact/" class="hover:text-[#F97316] transition">Contact</a></li>
+    </ul>
+    <div class="flex gap-2">
+      <a href="tel:+94758244216" class="btn-call text-sm px-3 py-2 rounded-full text-white font-semibold shadow-sm inline-flex items-center gap-1"><i class="fas fa-phone-alt"></i> Call Now</a>
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-[#0A2647] ml-2"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Slide Menu -->
+<div id="mobileMenuOverlay" class="menu-overlay"></div>
+<div id="mobileMenu" class="mobile-menu">
+  <div class="flex justify-between items-center border-b pb-3 mb-4">
+    <span class="font-bold text-xl text-[#0A2647]"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7</span>
+    <button id="closeMobileMenu" class="text-2xl text-[#0A2647]"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="space-y-4 text-base font-medium">
+    <li><a href="/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-home w-6"></i> Home</a></li>
+    <li><a href="/services/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-wrench w-6"></i> Services</a></li>
+    <li><a href="/commercial/" class="block py-2 text-[#F97316] font-bold"><i class="fas fa-building w-6"></i> Commercial</a></li>
+    <li><a href="/areas/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-map-marker-alt w-6"></i> Areas</a></li>
+    <li><a href="/pricing/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-tag w-6"></i> Pricing</a></li>
+    <li><a href="/faq/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-question-circle w-6"></i> FAQ</a></li>
+    <li><a href="/contact/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-envelope w-6"></i> Contact</a></li>
+    <li class="pt-4"><a href="tel:+94758244216" class="btn-call text-white text-center block py-2 rounded-full"><i class="fas fa-phone-alt mr-1"></i> Emergency Call</a></li>
+  </ul>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="container mx-auto px-4 py-3 text-sm text-gray-600">
+  <a href="/" class="hover:underline">Home</a> <span class="mx-2">›</span> <span class="font-medium text-[#0A2647]">Commercial</span>
+</div>
+
+<!-- HERO SECTION -->
+<section class="py-12 bg-gradient-to-br from-[#0A2647] via-[#1E3A5F] to-[#2C4A6E] text-white">
+  <div class="container mx-auto px-4">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Commercial Plumbing Services in Colombo</h1>
+    <p class="text-lg opacity-90 mb-6 max-w-3xl">Running a business? Don't let plumbing issues disrupt your operations. SIX7 Plumbing provides dedicated commercial and industrial plumbing services across Colombo and the Western Province. From office building maintenance contracts to hotel bathroom renovations, restaurant kitchen plumbing, and factory pipe systems — our direct-work model delivers professional results at transparent, bulk-friendly pricing. After-hours work available to minimize downtime. Written proposals before project start.</p>
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+      <a href="https://wa.me/94758244216?text=COMMERCIAL%20QUOTE%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-6 rounded-full text-center flex-1 inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp for Business Quote</a>
+      <a href="tel:+94758244216" class="bg-white text-[#0A2647] hover:bg-gray-100 font-bold py-3 px-6 rounded-full text-center flex-1 inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Business Line: +94 75 824 4216</a>
+    </div>
+    <p class="text-sm opacity-80 max-w-2xl">Serving <strong>commercial plumber colombo</strong>, <strong>plumbing service for business</strong>, <strong>office plumbing maintenance</strong>, <strong>restaurant plumbing colombo</strong>, and <strong>hotel kitchen plumber</strong> searches across Western Province.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm opacity-90 mt-4">
+      <div><i class="fas fa-check-circle text-green-400 mr-1"></i> 100+ Commercial Clients</div>
+      <div><i class="fas fa-clock text-blue-300 mr-1"></i> After-Hours Available</div>
+      <div><i class="fas fa-file-invoice text-blue-300 mr-1"></i> PO/Invoice Terms</div>
+      <div><i class="fas fa-exclamation-triangle text-yellow-400 mr-1"></i> Callout fee applies to all dispatches</div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES WE SERVE -->
+<section class="py-12 border-b">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]">Industries We Serve — Commercial Plumbing Solutions</h2>
+    <p class="text-sm text-gray-500 mb-6">Keywords: commercial plumber colombo, facility management plumbing, business plumbing service, industrial plumbing western province</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-building text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Office Buildings & Corporate Spaces</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Maintenance contracts (monthly/quarterly)</li><li>✓ Emergency response for leaks/clogs</li><li>✓ Restroom fixture upgrades</li><li>✓ After-hours work</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: office plumbing maintenance colombo, corporate plumbing service</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20OFFICE%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request office quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-hotel text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Hotels, Resorts & Hospitality</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Guest bathroom repairs & renovations</li><li>✓ Kitchen & laundry maintenance</li><li>✓ Water heater & boiler servicing</li><li>✓ 24/7 emergency response</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: hotel plumbing colombo, resort maintenance plumber</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20HOTEL%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request hotel quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-utensils text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Restaurants, Cafes & Food Service</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Grease trap installation & maintenance</li><li>✓ Commercial kitchen sink & drainage</li><li>✓ Health-code compliant inspections</li><li>✓ Emergency unclogging</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: restaurant plumbing colombo, kitchen grease trap service</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20RESTAURANT%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request restaurant quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-hospital text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Hospitals, Clinics & Healthcare</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Sanitation-critical repairs</li><li>✓ Backflow prevention & testing</li><li>✓ Infection-control compliant upgrades</li><li>✓ Scheduled maintenance</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: healthcare plumbing colombo, hospital maintenance plumber</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20HEALTHCARE%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request healthcare quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-graduation-cap text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Schools, Universities & Institutions</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Dormitory & classroom maintenance</li><li>✓ Sports facility & locker room support</li><li>✓ Water conservation upgrades</li><li>✓ Emergency response</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: school plumbing colombo, university maintenance plumber</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20SCHOOL%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request school quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-shopping-cart text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Retail, Malls & Commercial Centers</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Public restroom rapid repair</li><li>✓ Food court plumbing support</li><li>✓ Seasonal maintenance</li><li>✓ Tenant coordination</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: retail plumbing colombo, mall maintenance plumber</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20RETAIL%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request retail quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-industry text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Industrial & Manufacturing</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ Pipe welding & fabrication</li><li>✓ High-pressure supply & drainage</li><li>✓ Boiler & cooling tower support</li><li>✓ Fire sprinkler integration</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: industrial plumber colombo, factory plumbing service</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20INDUSTRIAL%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request industrial quote →</a></div>
+      <div class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-hard-hat text-2xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Construction & Property Development</h3><ul class="space-y-1 text-sm text-gray-600 mb-3"><li>✓ New-build rough-ins & fit-outs</li><li>✓ Subcontractor coordination</li><li>✓ Quality assurance testing</li><li>✓ Defect liability support</li></ul><p class="text-xs text-gray-400 mb-2">Keywords: construction plumbing colombo, property development plumber</p><a href="https://wa.me/94758244216?text=COMMERCIAL%20CONSTRUCTION%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request construction quote →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL SERVICE MODELS -->
+<section class="py-12 border-b bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">Our Commercial Service Models</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="border rounded-xl p-6 bg-white"><i class="fas fa-calendar-alt text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Preventive Maintenance Contracts</h3><p class="text-sm text-gray-600 mb-3">Scheduled inspections, priority response, discounted rates, detailed reports. Save up to 40% vs. reactive repairs.</p><ul class="text-sm space-y-1 text-gray-600 mb-4"><li>✓ Quarterly system health checks</li><li>✓ Priority dispatch for contract clients</li><li>✓ Consolidated monthly invoicing</li><li>✓ Dedicated account manager</li></ul><a href="https://wa.me/94758244216?text=MAINTENANCE%20CONTRACT%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request maintenance contract →</a></div>
+      <div class="border rounded-xl p-6 bg-white"><i class="fas fa-file-signature text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Project-Based Plumbing</h3><p class="text-sm text-gray-600 mb-3">One-off renovations, fixed-price quotes, dedicated project manager, timeline guarantees.</p><ul class="text-sm space-y-1 text-gray-600 mb-4"><li>✓ Fixed-scope written proposals</li><li>✓ Dedicated project coordinator</li><li>✓ Timeline & milestone guarantees</li><li>✓ Post-project warranty support</li></ul><a href="https://wa.me/94758244216?text=PROJECT%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request project quote →</a></div>
+      <div class="border rounded-xl p-6 bg-red-50"><i class="fas fa-bolt text-3xl text-red-500 mb-3"></i><h3 class="font-bold text-lg mb-2 text-red-700">Emergency Response Retainers</h3><p class="text-sm text-gray-600 mb-3">Guaranteed SLA (2h/4h), dedicated contact line, pre-negotiated rates. Peace of mind for critical facilities.</p><ul class="text-sm space-y-1 text-gray-600 mb-4"><li>✓ Guaranteed 2-4 hour response SLA</li><li>✓ Dedicated emergency contact line</li><li>✓ Pre-negotiated hourly rates</li><li>✓ Priority dispatch for retainer clients</li></ul><a href="https://wa.me/94758244216?text=EMERGENCY%20RETAINER%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request emergency retainer →</a></div>
+      <div class="border rounded-xl p-6 bg-white"><i class="fas fa-chart-line text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold text-lg mb-2">Consultation & Compliance Audits</h3><p class="text-sm text-gray-600 mb-3">System assessments, water efficiency audits, health and safety reviews, cost-benefit analysis.</p><ul class="text-sm space-y-1 text-gray-600 mb-4"><li>✓ Full plumbing system assessment</li><li>✓ Water efficiency & conservation audit</li><li>✓ Health & safety compliance review</li><li>✓ Cost-benefit analysis for upgrades</li></ul><a href="https://wa.me/94758244216?text=CONSULTATION%20QUOTE%20Colombo" class="text-[#F97316] text-sm font-medium">Request consultation →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL QUOTE FORM -->
+<section class="py-12 border-b">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-2xl font-bold mb-6 text-center">Request Commercial Quote</h2>
+    <form action="https://formsubmit.co/plumbing@six7.lk" method="POST" class="space-y-4 bg-white border rounded-xl p-6 shadow-sm">
+      <input type="hidden" name="_subject" value="Commercial Quote Request - plumbing.six7.lk">
+      <input type="hidden" name="_next" value="https://plumbing.six7.lk/thank-you/">
+      <input type="hidden" name="_autoresponse" value="Thanks! Our commercial team will contact you within 2 business hours. - Six7 Plumbing">
+      <div class="grid md:grid-cols-2 gap-4"><div><label class="block text-sm font-medium mb-1">Business Name *</label><input type="text" name="business_name" required class="w-full px-4 py-2 border rounded-lg"></div><div><label class="block text-sm font-medium mb-1">Contact Person *</label><input type="text" name="contact_person" required class="w-full px-4 py-2 border rounded-lg"></div></div>
+      <div class="grid md:grid-cols-2 gap-4"><div><label class="block text-sm font-medium mb-1">Phone Number *</label><input type="tel" name="phone" placeholder="+94 XX XXX XXXX" pattern="^\+94[0-9]{9}$" required class="w-full px-4 py-2 border rounded-lg"></div><div><label class="block text-sm font-medium mb-1">Email Address *</label><input type="email" name="email" required class="w-full px-4 py-2 border rounded-lg"></div></div>
+      <div><label class="block text-sm font-medium mb-1">Service Address *</label><input type="text" name="address" placeholder="e.g., Colombo 3, Kotte, Battaramulla" required class="w-full px-4 py-2 border rounded-lg"></div>
+      <div class="bg-gray-50 rounded-lg p-4"><label class="block text-sm font-medium mb-2">Precise Location (Lat/Long)</label><p class="text-xs text-gray-500 mb-3">Click "Get Location" to auto-fill coordinates. Helps us dispatch nearest technician.</p><div class="grid md:grid-cols-3 gap-3"><button type="button" id="getLocationBtn" class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-2 rounded-lg text-sm"><i class="fas fa-location-dot mr-1"></i> Get Location</button><input type="text" name="latitude" placeholder="Latitude" class="px-3 py-2 border rounded-lg text-sm"><input type="text" name="longitude" placeholder="Longitude" class="px-3 py-2 border rounded-lg text-sm"></div></div>
+      <div><label class="block text-sm font-medium mb-1">Service Type *</label><select name="service_type" required class="w-full px-4 py-2 border rounded-lg"><option value="">Select service type</option><option value="maintenance-contract">Preventive Maintenance Contract</option><option value="project-based">Project-Based Plumbing</option><option value="emergency-retainer">Emergency Response Retainer</option><option value="consultation">Consultation & Audit</option><option value="other">Other Commercial Need</option></select></div>
+      <div><label class="block text-sm font-medium mb-1">Tell us about your commercial plumbing needs *</label><textarea name="message" placeholder="e.g., Office building maintenance contract, restaurant grease trap installation, hotel bathroom renovation..." rows="4" required class="w-full px-4 py-2 border rounded-lg"></textarea></div>
+      <label class="flex items-start gap-2 text-sm bg-yellow-50 p-3 rounded-lg border border-yellow-200"><input type="checkbox" name="terms" required class="mt-1"><span>I have read and agree to the <a href="/pricing/" class="underline text-[#F97316]">Pricing Policy</a> and <a href="/disclaimer/" class="underline text-[#F97316]">Zero-Tolerance Disclaimer</a>. Callout fee applies to all commercial dispatches regardless of outcome.</span></label>
+      <button type="submit" class="w-full bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 rounded-xl transition"><i class="fas fa-paper-plane mr-2"></i> REQUEST QUOTE</button>
+    </form>
+    <p class="text-center text-sm text-gray-500 mt-4">Prefer WhatsApp? <a href="https://wa.me/94758244216?text=COMMERCIAL%20INQUIRY%20Colombo" class="underline text-green-600"><i class="fab fa-whatsapp mr-1"></i> Message our commercial team directly</a></p>
+  </div>
+</section>
+
+<!-- WHY BUSINESSES CHOOSE SIX7 -->
+<section class="py-12 border-b bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">Why Businesses Choose SIX7 Plumbing</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-handshake text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">Direct Work Model</h3><p class="text-sm text-gray-600">No agency markups, no middlemen. You pay for the work, not the platform.</p><p class="text-xs text-gray-400 mt-2">Keywords: direct commercial plumber colombo</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-file-invoice-dollar text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">Business-Friendly Terms</h3><p class="text-sm text-gray-600">Formal invoicing, accept POs, Net-15/30 terms for contract clients.</p><p class="text-xs text-gray-400 mt-2">Keywords: commercial plumber invoice terms colombo</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-moon text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">After-Hours & Weekend Work</h3><p class="text-sm text-gray-600">Minimize disruption with scheduled after-hours, weekends, or holiday service.</p><p class="text-xs text-gray-400 mt-2">Keywords: after-hours plumber colombo</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-chart-simple text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">Scalable Pricing</h3><p class="text-sm text-gray-600">Bulk discounts for multi-site contracts. Consolidated billing for ease of accounting.</p><p class="text-xs text-gray-400 mt-2">Keywords: multi-site plumbing contract colombo</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-user-tie text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">Dedicated Account Manager</h3><p class="text-sm text-gray-600">Single point of contact for all your plumbing needs. No call center runaround.</p><p class="text-xs text-gray-400 mt-2">Keywords: dedicated plumbing account manager colombo</p></div>
+      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-scale-balanced text-3xl text-[#F97316] mb-3"></i><h3 class="font-bold">Local Compliance Knowledge</h3><p class="text-sm text-gray-600">We know Colombo's plumbing codes, health regulations, and commercial compliance requirements.</p><p class="text-xs text-gray-400 mt-2">Keywords: compliance plumber colombo</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENT COMMERCIAL PRICING -->
+<section class="py-12 border-b">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">Transparent Commercial Pricing</h2>
+    <div class="overflow-x-auto mb-6">
+      <table class="w-full text-sm border rounded-xl">
+        <thead class="bg-gray-100"><tr><th class="text-left p-3 border-b">Service Type</th><th class="text-right p-3 border-b">Starting Price</th></tr></thead>
+        <tbody>
+          <tr class="border-b"><td class="p-3">Small Office (1-2 restrooms)</td><td class="p-3 text-right font-bold">From LKR 8,000/month</td></tr>
+          <tr class="border-b"><td class="p-3">Restaurant/Cafe</td><          <td class="p-3 text-right font-bold">From LKR 15,000/month</td></tr>
+          <tr class="border-b"><td class="p-3">Hotel (20 rooms)</td><td class="p-3 text-right font-bold">From LKR 45,000/month</td></tr>
+          <tr class="border-b"><td class="p-3">Office Bathroom Renovation (per unit)</td><td class="p-3 text-right font-bold">From LKR 65,000</td></tr>
+          <tr><td class="p-3">Commercial Kitchen Plumbing Upgrade</td><td class="p-3 text-right font-bold">From LKR 120,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bg-blue-50 rounded-xl p-4 mb-4">
+      <p class="text-sm font-medium mb-2 text-[#0A2647]">Important Pricing Notes:</p>
+      <ul class="text-sm space-y-1 text-gray-700">
+        <li><i class="fas fa-check-circle text-green-600 mr-2"></i> All commercial projects receive written proposals before work begins</li>
+        <li><i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i> Callout/dispatch fee applies to ALL commercial visits regardless of outcome</li>
+        <li><i class="fas fa-chart-line text-blue-600 mr-2"></i> Multi-site contracts eligible for volume discounts</li>
+        <li><i class="fas fa-handshake text-green-600 mr-2"></i> Price Match Promise: Found a lower written quote for same scope? We'll match it</li>
+      </ul>
+      <p class="text-xs text-gray-500 mt-3"><a href="/pricing/" class="underline text-[#F97316]">View full commercial rate card</a> • <a href="/disclaimer/" class="underline text-[#F97316]">Read policy</a></p>
+    </div>
+    <div class="text-center"><span class="inline-flex items-center gap-1 text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Price Match Promise: Found a lower written quote for the same scope? We will match it.</span></div>
+  </div>
+</section>
+
+<!-- COMMERCIAL SERVICE COVERAGE -->
+<section class="py-12 border-b bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">Commercial Service Coverage</h2>
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-3"><i class="fas fa-city text-[#F97316] mr-2"></i> Colombo Business Districts (30 min)</h3><div class="flex flex-wrap gap-2"><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 1</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 2</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 3</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 4</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 5</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 7</span><span class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 10</span></div><p class="text-xs text-gray-400 mt-3">Keywords: commercial plumber colombo 1, business plumbing colombo 3, office plumber colombo 7</p></div>
+      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-3"><i class="fas fa-building text-[#F97316] mr-2"></i> Greater Colombo Hubs (45 min)</h3><div class="flex flex-wrap gap-2"><a href="/kotte/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Kotte</a><a href="/battaramulla/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Battaramulla</a><a href="/nugegoda/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Nugegoda</a><a href="/maharagama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Maharagama</a></div><p class="text-xs text-gray-400 mt-3">Keywords: commercial plumber kotte, business plumbing battaramulla, office plumber nugegoda</p></div>
+      <div class="border rounded-xl p-5 bg-white md:col-span-2"><h3 class="font-bold text-lg mb-3"><i class="fas fa-industry text-[#F97316] mr-2"></i> Industrial Zones</h3><div class="flex flex-wrap gap-2"><a href="/kelaniya/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Kelaniya</a><a href="/ragama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Ragama</a><a href="/negombo/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm hover:bg-blue-50">Negombo</a></div><p class="text-xs text-gray-400 mt-3">Keywords: industrial plumber kelaniya, factory plumbing ragama, commercial plumber negombo</p></div>
+    </div>
+    <div class="text-center"><p class="text-sm text-gray-500 mb-3">Call for multi-site discounts →</p><a href="tel:+94758244216" class="inline-flex items-center gap-1 text-[#F97316] font-medium"><i class="fas fa-phone-alt mr-1"></i> +94 75 824 4216</a></div>
+  </div>
+</section>
+
+<!-- COMMERCIAL FAQS -->
+<section class="py-12 border-b">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">Commercial FAQs</h2>
+    <div class="space-y-4">
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Do you offer invoicing and PO payment terms?</summary><p class="mt-2 text-sm text-gray-600">Yes. Formal invoices, accept POs, Net-15/30 terms for contract clients. We understand business cash flow needs and offer flexible payment terms for established commercial relationships. Keywords: commercial plumber invoice colombo, PO payment plumbing service</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Can you work after hours to avoid disruption?</summary><p class="mt-2 text-sm text-gray-600">Absolutely. After-hours, weekends, holidays standard for commercial clients. We coordinate with your operations team to schedule work during low-impact windows. Callout fee applies to all dispatches regardless of timing. Keywords: after-hours commercial plumber colombo, weekend plumbing service business</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">What if we have multiple locations?</summary><p class="mt-2 text-sm text-gray-600">Multi-site contracts with consolidated billing, volume discounts, one account manager. We streamline plumbing maintenance across all your locations with unified reporting and priority dispatch. Keywords: multi-site plumbing contract colombo, consolidated billing plumber</p></details>
+      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Do you provide written proposals before work?</summary><p class="mt-2 text-sm text-gray-600">Yes. All commercial projects receive detailed written proposals with scope, timeline, and pricing before any work begins. No surprises, no hidden fees. Callout fee applies to all dispatches regardless of outcome. Keywords: commercial plumbing proposal colombo, written quote plumber</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section class="py-12 bg-[#0A2647] text-white text-center">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-4">Ready to Discuss Your Commercial Plumbing Needs?</h2>
+    <p class="mb-6 opacity-90 max-w-2xl mx-auto">Don't let plumbing issues impact your business operations. SIX7 Plumbing is ready to partner with you.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+      <a href="tel:+94758244216" class="bg-white text-[#0A2647] hover:bg-gray-100 font-bold py-3 px-8 rounded-full inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Business Line: +94 75 824 4216</a>
+      <a href="https://wa.me/94758244216?text=COMMERCIAL%20INQUIRY%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-8 rounded-full inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp Commercial Team</a>
+    </div>
+    <div class="flex flex-wrap justify-center gap-2 mb-4 text-sm">
+      <span class="bg-blue-800 px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Free initial consultation</span>
+      <span class="bg-blue-800 px-3 py-1 rounded-full"><i class="fas fa-file-alt mr-1"></i> Custom proposals</span>
+      <span class="bg-blue-800 px-3 py-1 rounded-full"><i class="fas fa-user-tie mr-1"></i> Dedicated account manager</span>
+    </div>
+    <p class="text-xs opacity-70">Email: <a href="mailto:plumbing@six7.lk" class="underline hover:opacity-100">plumbing@six7.lk</a> • ⚠️ Callout fee applies to all commercial dispatches regardless of outcome</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#0A2647] text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div><h3 class="font-bold text-lg mb-4"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7.PLUMBING</h3><p class="text-sm opacity-80">Colombo's trusted commercial & emergency plumbing. Transparent rates. Zero middlemen.</p></div>
+      <div><h4 class="font-bold mb-3">Quick Links</h4><ul class="space-y-2 text-sm"><li><a href="/" class="opacity-80 hover:opacity-100">Home</a></li><li><a href="/services/" class="opacity-80 hover:opacity-100">Services</a></li><li><a href="/commercial/" class="opacity-100 font-medium text-[#F97316]">Commercial</a></li><li><a href="/areas/" class="opacity-80 hover:opacity-100">Coverage</a></li><li><a href="/pricing/" class="opacity-80 hover:opacity-100">Pricing</a></li><li><a href="/disclaimer/" class="opacity-80 hover:opacity-100">Disclaimer</a></li></ul></div>
+      <div><h4 class="font-bold mb-3">Contact</h4><ul class="space-y-2 text-sm"><li><a href="tel:+94758244216" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a></li><li><a href="mailto:plumbing@six7.lk" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fas fa-envelope"></i> plumbing@six7.lk</a></li><li><a href="https://wa.me/94758244216" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div>
+      <div><h4 class="font-bold mb-3">Commercial Base</h4><p class="text-xs opacity-80"><i class="fas fa-map-marker-alt mr-1"></i> Mt Lavinia, Colombo<br>Serving Western Province businesses 24/7</p></div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 text-center text-xs opacity-70"><p>© 2026 Six7 Plumbing. All rights reserved. <a href="/disclaimer/" class="underline hover:opacity-100">Terms & Zero-Tolerance Policy</a> apply to all commercial engagements.</p><p class="mt-2">Made with <i class="fas fa-heart text-red-400"></i> by SIX7 Team</p></div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  const closeBtn = document.getElementById('closeMobileMenu');
+  function openMenu() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+  if(menuBtn) menuBtn.addEventListener('click', openMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+  document.getElementById('getLocationBtn')?.addEventListener('click', function() {
+    if(navigator.geolocation) navigator.geolocation.getCurrentPosition(function(p) {
+      document.querySelector('[name="latitude"]').value = p.coords.latitude.toFixed(6);
+      document.querySelector('[name="longitude"]').value = p.coords.longitude.toFixed(6);
+    });
+  });
+</script>
+</body>
+</html>
