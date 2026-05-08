@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Explicit AI Crawler Allowance
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Omgilibot
+Allow: /
+
+Sitemap: https://plumbing.six7.lk/sitemap.xml
