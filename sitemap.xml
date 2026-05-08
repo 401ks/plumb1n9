@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
+  <url><loc>https://plumbing.six7.lk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://plumbing.six7.lk/services/</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://plumbing.six7.lk/commercial/</loc><changefreq>monthly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/pricing/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/areas/</loc><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://plumbing.six7.lk/contact/</loc><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://plumbing.six7.lk/about-us/</loc><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://plumbing.six7.lk/disclaimer/</loc><changefreq>yearly</changefreq><priority>0.30</priority></url>
+
+  <!-- Service Pages (0.9) -->
+  <url><loc>https://plumbing.six7.lk/leak-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/drain-cleaning/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/toilet-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/toilet-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/tap-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/tap-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/shower-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/shower-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-heater-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-heater-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-tank-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-tank-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-tank-cleaning/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/water-tank-replacement/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/sump-pump-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/sump-pump-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/pipe-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/leak-detection/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/low-water-pressure-diagnostic/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/outdoor-plumbing-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/house-plumbing/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/annual-plumbing-inspections/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/backflow-preventer-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/grease-trap-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/grease-trap-cleaning/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/waste-disposal-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/waste-disposal-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/greywater-system-installation/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/pool-plumbing-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/sewer-cleaning/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/sewer-repair/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/whole-house-water-filter/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/drinking-water-purification/</loc><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://plumbing.six7.lk/emergency/</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+
+  <!-- Location Pages (0.85) -->
+  <url><loc>https://plumbing.six7.lk/colombo/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/dehiwala/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/kotte/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/battaramulla/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/maharagama/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/piliyandala/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/nugegoda/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/boralasgamuwa/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/rathmalana/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/mt-lavinia/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/kaduwela/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/homagama/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/thalagala/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://plumbing.six7.lk/padukka/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+</urlset>
