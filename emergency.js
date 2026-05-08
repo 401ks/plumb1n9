@@ -1,15 +1,12 @@
 /**
- * SIX7 Plumbing - Emergency Call Popup & Floating Button (Enhanced with 3 New Ads)
+ * SIX7 Plumbing - Emergency Call Popup & Floating Button (Core Only)
  * Include this script on any page with: <script src="/js/emergency-popup.js"></script>
  * Features:
  * - Full-screen emergency popup with call/WhatsApp buttons
  * - Floating call & WhatsApp buttons (always visible after popup close)
- * - SMART AD INJECTION (5 total ads across your page):
- *   1. tailors.lk - in first content section
- *   2. electrical.six7.lk - before footer
- *   3. SIX7 Cleaning (commercial cleaning) - in secondary content area
- *   4. SIX7 Junk Removal - after cleaning ad or in sidebar-style area
- *   5. Review Us section - pushes into page layout naturally (mobile-first card)
+ * 
+ * NOTE: Ad injection features are COMMENTED OUT but preserved for future reactivation.
+ * To re-enable ads, uncomment the relevant sections below.
  */
 
 (function() {
@@ -23,17 +20,18 @@
         popupDuration: 300,
         bannerDismissedKey: 'six7EmergencyPopupDismissed',
         floatingDismissedKey: 'six7FloatingDismissed',
-        tailorAdUrl: 'https://tailors.lk',
-        electricalAdUrl: 'https://electrical.six7.lk',
-        cleaningAdUrl: 'https://six7.lk/cleaning',
-        junkRemovalAdUrl: 'https://six7.lk/junk-removal',
-        reviewUrl: 'https://six7.lk/p-review'
+        // ========== AD URLs (Kept for future use) ==========
+        // tailorAdUrl: 'https://tailors.lk',
+        // electricalAdUrl: 'https://electrical.six7.lk',
+        // cleaningAdUrl: 'https://six7.lk/cleaning',
+        // junkRemovalAdUrl: 'https://six7.lk/junk-removal',
+        // reviewUrl: 'https://six7.lk/p-review'
     };
 
     let popupDismissed = sessionStorage.getItem(CONFIG.bannerDismissedKey) === 'true';
     let floatingDismissed = localStorage.getItem(CONFIG.floatingDismissedKey) === 'true';
 
-    // ========== STYLES ==========
+    // ========== STYLES (Core Popup + Floating Buttons Only) ==========
     function injectStyles() {
         const style = document.createElement('style');
         style.textContent = `
@@ -52,7 +50,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: opacity 0.3s ease, visibility 0.3s ease;
-                font-family: 'Inter', system-ui, sans-serif;
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             }
             .six7-emergency-overlay.active {
                 opacity: 1;
@@ -87,9 +85,13 @@
                 align-items: center;
                 justify-content: center;
                 margin: 0 auto 20px;
+                box-shadow: 0 0 20px rgba(220,38,38,0.4);
                 animation: six7-pulse 1.5s infinite;
             }
-            .six7-popup-icon i { font-size: 40px; color: white; }
+            .six7-popup-icon i {
+                font-size: 40px;
+                color: white;
+            }
             @keyframes six7-pulse {
                 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(220,38,38,0.4); }
                 50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(220,38,38,0.7); }
@@ -98,17 +100,20 @@
                 font-size: 28px;
                 font-weight: 800;
                 margin-bottom: 12px;
+                letter-spacing: -0.5px;
             }
             .six7-popup-subtitle {
                 font-size: 16px;
                 opacity: 0.85;
                 margin-bottom: 24px;
+                line-height: 1.5;
             }
             .six7-popup-divider {
                 width: 60px;
                 height: 3px;
                 background: #F97316;
                 margin: 0 auto 24px;
+                border-radius: 3px;
             }
             .six7-emergency-number {
                 background: rgba(255,255,255,0.1);
@@ -125,6 +130,7 @@
             .six7-emergency-number span {
                 font-size: 22px;
                 font-weight: 700;
+                letter-spacing: 1px;
             }
             .six7-call-btn {
                 display: inline-flex;
@@ -142,6 +148,8 @@
                 max-width: 280px;
                 margin: 0 auto 16px;
                 transition: all 0.2s ease;
+                border: none;
+                cursor: pointer;
             }
             .six7-call-btn:hover {
                 background: #B91C1C;
@@ -207,7 +215,7 @@
                 transform: scale(1.1);
             }
             
-            /* Floating Buttons */
+            /* Floating Action Buttons */
             .six7-floating-container {
                 position: fixed;
                 bottom: 20px;
@@ -219,7 +227,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(20px);
-                transition: all 0.3s ease;
+                transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
             }
             .six7-floating-container.active {
                 opacity: 1;
@@ -238,6 +246,7 @@
                 text-decoration: none;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.2);
                 transition: all 0.2s ease;
+                cursor: pointer;
             }
             .six7-floating-call:hover {
                 transform: scale(1.1);
@@ -255,6 +264,7 @@
                 text-decoration: none;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.2);
                 transition: all 0.2s ease;
+                cursor: pointer;
             }
             .six7-floating-wa:hover {
                 transform: scale(1.1);
@@ -264,7 +274,35 @@
                 font-size: 26px;
             }
             
-            /* ========== ALL 5 AD STYLES (Clean, Junk, Review, Tailor, Electrical) ========== */
+            /* Mobile optimization */
+            @media (max-width: 768px) {
+                .six7-popup-content {
+                    padding: 32px 20px 28px;
+                }
+                .six7-popup-title {
+                    font-size: 24px;
+                }
+                .six7-emergency-number span {
+                    font-size: 18px;
+                }
+                .six7-call-btn, .six7-wa-btn {
+                    padding: 12px 20px;
+                    font-size: 16px;
+                }
+            }
+            
+            /* Desktop hover effects */
+            @media (min-width: 769px) {
+                .six7-floating-container {
+                    right: 30px;
+                    bottom: 30px;
+                }
+            }
+            
+            /* ============================================
+               AD STYLES - COMMENTED OUT (Preserved for future use)
+               ============================================ */
+            /*
             .six7-ad-wrapper {
                 max-width: 100%;
                 margin: 30px auto;
@@ -314,24 +352,16 @@
                 transform: scale(1.02);
                 opacity: 0.95;
             }
-            
-            /* Individual Ad Themes */
             .six7-ad-tailor .six7-ad-card { background: linear-gradient(135deg, #11998e, #38ef7d); }
             .six7-ad-tailor .six7-ad-button { color: #11998e; }
-            
             .six7-ad-electrical .six7-ad-card { background: linear-gradient(135deg, #f093fb, #f5576c); }
             .six7-ad-electrical .six7-ad-button { color: #f5576c; }
-            
             .six7-ad-cleaning .six7-ad-card { background: linear-gradient(135deg, #4facfe, #00f2fe); }
             .six7-ad-cleaning .six7-ad-button { color: #4facfe; }
-            
             .six7-ad-junk .six7-ad-card { background: linear-gradient(135deg, #fa709a, #fee140); }
             .six7-ad-junk .six7-ad-button { color: #fa709a; }
-            
             .six7-ad-review .six7-ad-card { background: linear-gradient(135deg, #f6d365, #fda085); }
             .six7-ad-review .six7-ad-button { color: #f6d365; }
-            
-            /* Two-column layout for specific ads (Cleaning + Junk side by side on desktop) */
             @media (min-width: 768px) {
                 .six7-ad-dual-grid {
                     display: flex;
@@ -343,23 +373,12 @@
                     margin: 0;
                 }
             }
-            
-            /* Mobile optimization */
-            @media (max-width: 768px) {
-                .six7-popup-content { padding: 32px 20px 28px; }
-                .six7-popup-title { font-size: 24px; }
-                .six7-emergency-number span { font-size: 18px; }
-                .six7-call-btn, .six7-wa-btn { padding: 12px 20px; font-size: 16px; }
-                .six7-ad-card { padding: 18px; }
-                .six7-ad-card h4 { font-size: 18px; }
-            }
-            @media (min-width: 769px) {
-                .six7-floating-container { right: 30px; bottom: 30px; }
-            }
+            */
         `;
         document.head.appendChild(style);
     }
 
+    // Ensure Font Awesome is loaded
     function ensureFontAwesome() {
         if (!document.querySelector('link[href*="font-awesome"], link[href*="fontawesome"]')) {
             const faLink = document.createElement('link');
@@ -376,16 +395,32 @@
         overlay.id = 'six7EmergencyOverlay';
         overlay.innerHTML = `
             <div class="six7-emergency-popup">
-                <button class="six7-close-popup" id="six7ClosePopupBtn"><i class="fas fa-times"></i></button>
+                <button class="six7-close-popup" id="six7ClosePopupBtn">
+                    <i class="fas fa-times"></i>
+                </button>
                 <div class="six7-popup-content">
-                    <div class="six7-popup-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="six7-popup-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
                     <h2 class="six7-popup-title">Emergency Plumbing?</h2>
                     <div class="six7-popup-divider"></div>
-                    <p class="six7-popup-subtitle">Don't wait for water damage to get worse.<br>Our team is ready 24/7.</p>
-                    <div class="six7-emergency-number"><i class="fas fa-exclamation-triangle" style="color:#F97316;"></i><span>Call Now: ${CONFIG.phoneDisplay}</span></div>
-                    <a href="tel:${CONFIG.phoneNumber}" class="six7-call-btn" id="six7CallBtn"><i class="fas fa-phone-alt"></i> Call Emergency Line</a>
-                    <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Emergency</a>
-                    <a href="${CONFIG.pricingPageUrl}" class="six7-pricing-link" id="six7PricingLink"><i class="fas fa-tag"></i> View Our Pricing →</a>
+                    <p class="six7-popup-subtitle">
+                        Don't wait for water damage to get worse.<br>
+                        Our team is ready 24/7 for all plumbing emergencies.
+                    </p>
+                    <div class="six7-emergency-number">
+                        <i class="fas fa-exclamation-triangle" style="color: #F97316;"></i>
+                        <span>Call Now: ${CONFIG.phoneDisplay}</span>
+                    </div>
+                    <a href="tel:${CONFIG.phoneNumber}" class="six7-call-btn" id="six7CallBtn">
+                        <i class="fas fa-phone-alt"></i> Call Emergency Line
+                    </a>
+                    <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-wa-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Emergency
+                    </a>
+                    <a href="${CONFIG.pricingPageUrl}" class="six7-pricing-link" id="six7PricingLink">
+                        <i class="fas fa-tag"></i> View Our Pricing & Rates →
+                    </a>
                 </div>
             </div>
         `;
@@ -398,8 +433,12 @@
         container.className = 'six7-floating-container';
         container.id = 'six7FloatingContainer';
         container.innerHTML = `
-            <a href="tel:${CONFIG.phoneNumber}" class="six7-floating-call"><i class="fas fa-phone-alt"></i></a>
-            <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:${CONFIG.phoneNumber}" class="six7-floating-call" id="six7FloatingCall">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-floating-wa" id="six7FloatingWa" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         `;
         document.body.appendChild(container);
         return container;
@@ -407,25 +446,38 @@
 
     function showPopup() {
         const overlay = document.getElementById('six7EmergencyOverlay');
-        if (overlay) setTimeout(() => overlay.classList.add('active'), 50);
+        if (overlay) {
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 50);
+        }
     }
 
     function dismissPopupAndShowFloating() {
         const overlay = document.getElementById('six7EmergencyOverlay');
         if (overlay) {
             overlay.classList.remove('active');
-            setTimeout(() => overlay.style.display = 'none', CONFIG.popupDuration);
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, CONFIG.popupDuration);
         }
+        // Mark popup as dismissed for this session
         sessionStorage.setItem(CONFIG.bannerDismissedKey, 'true');
+        // Show floating buttons
         showFloatingButtons();
     }
 
     function showFloatingButtons() {
         const container = document.getElementById('six7FloatingContainer');
-        if (container && !floatingDismissed) setTimeout(() => container.classList.add('active'), 100);
+        if (container && !floatingDismissed) {
+            setTimeout(() => {
+                container.classList.add('active');
+            }, 100);
+        }
     }
 
-    // ========== AD INJECTION FUNCTIONS (5 ADS) ==========
+    // ========== AD FUNCTIONS - COMMENTED OUT (Preserved for future reactivation) ==========
+    /*
     function getContentSection(selectorFallbacks, minTextLength = 150) {
         for (let selector of selectorFallbacks) {
             const el = document.querySelector(selector);
@@ -455,7 +507,7 @@
     function injectTailorAd() {
         if (document.querySelector('.six7-ad-tailor')) return;
         const target = getContentSection(['section:first-of-type', 'main section:first-child', '.content-section', '#content', 'article'], 100);
-        const ad = createAdElement('six7-ad-tailor', 'fas fa-tshirt', 'Expert Tailors in Colombo', 'Custom clothing, alterations & bridal wear at best prices', 'Visit Tailors.lk', CONFIG.tailorAdUrl);
+        const ad = createAdElement('six7-ad-tailor', 'fas fa-tshirt', 'Expert Tailors in Colombo', 'Custom clothing, alterations & bridal wear at best prices', 'Visit tailors.lk', CONFIG.tailorAdUrl);
         target.parentNode.insertBefore(ad, target.nextSibling);
     }
 
@@ -463,7 +515,7 @@
         if (document.querySelector('.six7-ad-electrical')) return;
         let footer = document.querySelector('footer');
         let target = footer || document.body.lastElementChild;
-        const ad = createAdElement('six7-ad-electrical', 'fas fa-bolt', '24/7 Emergency Electricians', 'Electrical repairs, installations & safety inspections', 'Visit SIX7 Electrical', CONFIG.electricalAdUrl);
+        const ad = createAdElement('six7-ad-electrical', 'fas fa-bolt', '24/7 Emergency Electricians', 'Electrical repairs, installations & safety inspections', 'Visit electrical.six7.lk', CONFIG.electricalAdUrl);
         target.parentNode.insertBefore(ad, target);
     }
 
@@ -489,7 +541,6 @@
         target.parentNode.insertBefore(ad, target);
     }
 
-    // Create side-by-side layout for Cleaning + Junk (desktop)
     function arrangeDualAds() {
         setTimeout(() => {
             const cleaning = document.querySelector('.six7-ad-cleaning');
@@ -514,28 +565,68 @@
             }
         }, 100);
     }
+    */
 
     // ========== EVENT LISTENERS ==========
     function attachEventListeners() {
+        // Popup close button
         const closeBtn = document.getElementById('six7ClosePopupBtn');
-        if (closeBtn) closeBtn.addEventListener('click', dismissPopupAndShowFloating);
+        if (closeBtn) {
+            closeBtn.addEventListener('click', dismissPopupAndShowFloating);
+        }
         
+        // Call button tracking (optional - you can add analytics here)
         const callBtn = document.getElementById('six7CallBtn');
-        if (callBtn) callBtn.addEventListener('click', () => console.log('[SIX7] Emergency call initiated'));
+        if (callBtn) {
+            callBtn.addEventListener('click', function() {
+                console.log('[SIX7] Emergency call initiated');
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 'event_category': 'emergency', 'event_label': 'call_emergency' });
+                }
+            });
+        }
         
+        // WhatsApp button tracking
         const waBtn = document.getElementById('six7FloatingWa');
-        if (waBtn) waBtn.addEventListener('click', () => console.log('[SIX7] WhatsApp emergency'));
+        if (waBtn) {
+            waBtn.addEventListener('click', function() {
+                console.log('[SIX7] WhatsApp emergency initiated');
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 'event_category': 'emergency', 'event_label': 'whatsapp_emergency' });
+                }
+            });
+        }
+        
+        // Overlay click to close? (Optional - disabled to prevent accidental dismissal)
+        const overlay = document.getElementById('six7EmergencyOverlay');
+        if (overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    // Uncomment if you want to allow click outside to close
+                    // dismissPopupAndShowFloating();
+                }
+            });
+        }
     }
 
-    // ========== INIT ==========
+    // ========== INITIALIZATION ==========
     function init() {
+        // Inject core styles
         injectStyles();
+        
+        // Ensure Font Awesome is loaded
         ensureFontAwesome();
+        
+        // Create popup and floating elements
         createPopup();
         createFloatingButtons();
+        
+        // Attach event listeners
         attachEventListeners();
         
-        // Inject all 5 ads after DOM ready (with delay for layout)
+        // ========== AD INITIALIZATION - COMMENTED OUT ==========
+        // Uncomment the lines below to re-enable ads
+        /*
         setTimeout(() => {
             injectTailorAd();
             injectElectricalAd();
@@ -544,11 +635,23 @@
             injectReviewSection();
             arrangeDualAds();
         }, 500);
+        */
         
-        if (!popupDismissed) setTimeout(() => showPopup(), CONFIG.popupDelay);
-        else showFloatingButtons();
+        // Show popup after delay if not dismissed in this session
+        if (!popupDismissed) {
+            setTimeout(() => {
+                showPopup();
+            }, CONFIG.popupDelay);
+        } else {
+            // If popup was already dismissed, show floating buttons directly
+            showFloatingButtons();
+        }
     }
 
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-    else init();
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 })();
