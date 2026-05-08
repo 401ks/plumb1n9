@@ -1,11 +1,11 @@
 /**
- * SIX7 Plumbing - Emergency Call Popup & Floating Button
+ * SIX7 Plumbing - Emergency Call Popup & Floating Button (Enhanced)
  * Include this script on any page with: <script src="/js/emergency-popup.js"></script>
  * Features:
  * - Full-screen popup inviting user to call emergency number
- * - Close button to dismiss popup
- * - After dismissal, a floating WhatsApp + Call button appears at bottom
- * - Persistent state via localStorage (popup only shows once per session/page view)
+ * - Close button to dismiss popup (only one close button)
+ * - Two floating buttons (Call + WhatsApp) stay visible permanently after dismissal
+ * - Smart ad injection: tailors.lk ad in first content section, electrical.six7.lk ad before footer
  */
 
 (function() {
@@ -18,7 +18,9 @@
         popupDelay: 1500, // milliseconds before popup appears
         popupDuration: 300, // animation duration
         bannerDismissedKey: 'six7EmergencyPopupDismissed',
-        floatingDismissedKey: 'six7FloatingDismissed'
+        floatingDismissedKey: 'six7FloatingDismissed',
+        tailorAdUrl: 'https://tailors.lk',
+        electricalAdUrl: 'https://electrical.six7.lk'
     };
 
     // Check if popup has been dismissed in this session (using sessionStorage for per-session persistence)
@@ -209,7 +211,7 @@
                 transform: scale(1.1);
             }
             
-            /* Floating Action Button */
+            /* Floating Action Buttons - Always Visible (No close button on minimized state) */
             .six7-floating-container {
                 position: fixed;
                 bottom: 20px;
@@ -268,24 +270,60 @@
             .six7-floating-call i, .six7-floating-wa i {
                 font-size: 26px;
             }
-            .six7-floating-close {
-                background: #1a2c3e;
-                color: white;
-                width: 32px;
-                height: 32px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                font-size: 14px;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            
+            /* Ad Banner Styles */
+            .six7-ad-tailor, .six7-ad-electrical {
+                max-width: 100%;
+                margin: 0 auto;
+                overflow: hidden;
             }
-            .six7-floating-close:hover {
-                transform: scale(1.1);
-                background: #0A2647;
+            .six7-ad-inline {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 16px;
+                padding: 20px;
+                margin: 30px 0;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+            .six7-ad-inline:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 15px 30px -10px rgba(0,0,0,0.2);
+            }
+            .six7-ad-inline h4 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 8px;
+                color: white;
+            }
+            .six7-ad-inline p {
+                font-size: 14px;
+                opacity: 0.9;
+                margin-bottom: 12px;
+                color: white;
+            }
+            .six7-ad-button {
+                display: inline-block;
+                background: white;
+                color: #764ba2;
+                padding: 8px 20px;
+                border-radius: 40px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px;
+                transition: all 0.2s ease;
+            }
+            .six7-ad-button:hover {
+                transform: scale(1.05);
+                background: #f0f0f0;
+            }
+            
+            /* Electrical Ad Specific */
+            .six7-ad-electrical .six7-ad-inline {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            }
+            .six7-ad-electrical .six7-ad-button {
+                color: #f5576c;
             }
             
             /* Mobile optimization */
@@ -301,6 +339,12 @@
                 }
                 .six7-call-btn, .six7-wa-btn {
                     padding: 12px 20px;
+                    font-size: 16px;
+                }
+                .six7-ad-inline {
+                    padding: 16px;
+                }
+                .six7-ad-inline h4 {
                     font-size: 16px;
                 }
             }
@@ -366,7 +410,7 @@
         return overlay;
     }
 
-    // Create floating button container
+    // Create floating button container (no close button on minimized state)
     function createFloatingButtons() {
         const container = document.createElement('div');
         container.className = 'six7-floating-container';
@@ -378,9 +422,6 @@
             <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-floating-wa" id="six7FloatingWa" target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <button class="six7-floating-close" id="six7FloatingClose">
-                <i class="fas fa-times"></i>
-            </button>
         `;
         document.body.appendChild(container);
         return container;
@@ -396,7 +437,7 @@
         }
     }
 
-    // Hide popup and show floating buttons
+    // Hide popup and show floating buttons (permanently visible now)
     function dismissPopupAndShowFloating() {
         const overlay = document.getElementById('six7EmergencyOverlay');
         if (overlay) {
@@ -407,7 +448,7 @@
         }
         // Mark popup as dismissed for this session
         sessionStorage.setItem(CONFIG.bannerDismissedKey, 'true');
-        // Show floating buttons
+        // Show floating buttons (they stay visible permanently)
         showFloatingButtons();
     }
 
@@ -421,7 +462,7 @@
         }
     }
 
-    // Hide floating buttons permanently
+    // Hide floating buttons permanently (only if user chooses to - but now we removed the close button, so this won't be called)
     function dismissFloatingButtons() {
         const container = document.getElementById('six7FloatingContainer');
         if (container) {
@@ -434,6 +475,83 @@
         floatingDismissed = true;
     }
 
+    // Find the first major content section for Tailor ad
+    function injectTailorAd() {
+        // Look for common section selectors
+        const selectors = [
+            'section:not(.six7-ad-tailor):not(.six7-ad-electrical)', 
+            'main section:first-child',
+            '.content-section',
+            '#content',
+            'article:first-of-type',
+            '.container > div:first-of-type'
+        ];
+        
+        let targetSection = null;
+        for (let selector of selectors) {
+            targetSection = document.querySelector(selector);
+            if (targetSection && targetSection.offsetHeight > 100) break;
+        }
+        
+        // Fallback: find the first element with lots of text content
+        if (!targetSection) {
+            const allDivs = document.querySelectorAll('div, section, article');
+            for (let el of allDivs) {
+                if (el.innerText && el.innerText.length > 200 && !el.closest('.six7-ad-tailor') && !el.closest('.six7-ad-electrical')) {
+                    targetSection = el;
+                    break;
+                }
+            }
+        }
+        
+        if (targetSection && !document.querySelector('.six7-ad-tailor')) {
+            const adContainer = document.createElement('div');
+            adContainer.className = 'six7-ad-tailor';
+            adContainer.innerHTML = `
+                <div class="six7-ad-inline" onclick="window.open('${CONFIG.tailorAdUrl}', '_blank')" style="cursor: pointer;">
+                    <i class="fas fa-tshirt" style="font-size: 32px; color: white; margin-bottom: 8px; display: block;"></i>
+                    <h4>Looking for Expert Tailors?</h4>
+                    <p>Find the best tailors in Colombo for custom clothing, alterations & bridal wear</p>
+                    <span class="six7-ad-button">Visit tailors.lk <i class="fas fa-arrow-right"></i></span>
+                </div>
+            `;
+            // Insert after the target section
+            targetSection.parentNode.insertBefore(adContainer, targetSection.nextSibling);
+            console.log('[SIX7] Tailor ad injected');
+        }
+    }
+
+    // Find placement for Electrical ad (before footer)
+    function injectElectricalAd() {
+        // Look for footer or near footer
+        let footer = document.querySelector('footer');
+        let targetElement = null;
+        
+        if (footer) {
+            targetElement = footer;
+        } else {
+            // Look for last section or container
+            const lastSection = document.querySelector('section:last-of-type, .container:last-of-type, main:last-of-type');
+            if (lastSection) targetElement = lastSection;
+        }
+        
+        if (targetElement && !document.querySelector('.six7-ad-electrical')) {
+            const adContainer = document.createElement('div');
+            adContainer.className = 'six7-ad-electrical';
+            adContainer.innerHTML = `
+                <div class="six7-ad-inline" onclick="window.open('${CONFIG.electricalAdUrl}', '_blank')" style="cursor: pointer;">
+                    <i class="fas fa-bolt" style="font-size: 32px; color: white; margin-bottom: 8px; display: block;"></i>
+                    <h4>Need Electrical Services?</h4>
+                    <p>24/7 emergency electricians for homes, offices & commercial buildings</p>
+                    <span class="six7-ad-button">Visit electrical.six7.lk <i class="fas fa-arrow-right"></i></span>
+                </div>
+            `;
+            // Insert before the target element (footer or last section)
+            targetElement.parentNode.insertBefore(adContainer, targetElement);
+            console.log('[SIX7] Electrical ad injected');
+        }
+    }
+
     // Event listeners
     function attachEventListeners() {
         // Popup close button
@@ -442,18 +560,11 @@
             closeBtn.addEventListener('click', dismissPopupAndShowFloating);
         }
         
-        // Floating close button
-        const floatingClose = document.getElementById('six7FloatingClose');
-        if (floatingClose) {
-            floatingClose.addEventListener('click', dismissFloatingButtons);
-        }
-        
         // Call button tracking (optional - you can add analytics here)
         const callBtn = document.getElementById('six7CallBtn');
         if (callBtn) {
             callBtn.addEventListener('click', function() {
                 console.log('[SIX7] Emergency call initiated');
-                // You can add Google Analytics or other tracking here
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'click', { 'event_category': 'emergency', 'event_label': 'call_emergency' });
                 }
@@ -485,9 +596,6 @@
 
     // Initialize
     function init() {
-        // Don't show anything if permanently dismissed? We only use sessionStorage for popup
-        // so it shows on each new page view in a session, which is intentional.
-        
         // Inject styles
         injectStyles();
         
@@ -501,13 +609,19 @@
         // Attach event listeners
         attachEventListeners();
         
+        // Inject ads after DOM is ready and content is loaded
+        setTimeout(() => {
+            injectTailorAd();
+            injectElectricalAd();
+        }, 500);
+        
         // Show popup after delay if not dismissed in this session
         if (!popupDismissed) {
             setTimeout(() => {
                 showPopup();
             }, CONFIG.popupDelay);
         } else {
-            // If popup was already dismissed, show floating buttons directly
+            // If popup was already dismissed, show floating buttons directly (they stay visible)
             showFloatingButtons();
         }
     }
