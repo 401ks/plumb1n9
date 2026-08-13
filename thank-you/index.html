@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dispatch Request Received | SIX7 Plumbing</title>
+  <link rel="canonical" href="https://plumbing.six7.lk/thank-you/" />
+
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="We've received your dispatch request. A SIX7 coordinator will WhatsApp you within 3 minutes to verify the emergency and authorize the LKR 5,000 deployment hold. Call +94 75 824 4216.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Work+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+<meta property="og:url" content="https://plumbing.six7.lk/thank-you/">
+<meta property="og:title" content="Dispatch Request Received | SIX7 Plumbing">
+<meta property="og:description" content="We've received your dispatch request. A SIX7 coordinator will WhatsApp you within 3 minutes to verify the emergency and authorize the LKR 5,000 deployment hold.">
+<meta property="og:image" content="https://plumbing.six7.lk/assets/img/og-plumbing-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F8FAFE; color: #1A2C3E; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Work Sans', sans-serif; }
+    .btn-call { background-color: #DC2626; transition: all 0.2s; }
+    .btn-call:hover { background-color: #B91C1C; }
+    .btn-whatsapp { background-color: #25D366; transition: all 0.2s; }
+    .btn-whatsapp:hover { background-color: #128C7E; }
+    .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: 85%; max-width: 320px; background: white; z-index: 1000; transform: translateX(100%); transition: transform 0.3s ease-in-out; padding: 1.5rem; box-shadow: -5px 0 30px rgba(0,0,0,0.1); overflow-y: auto; }
+    .mobile-menu.open { transform: translateX(0); }
+    .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; display: none; }
+    .menu-overlay.active { display: block; }
+    @media (min-width: 768px) { .mobile-menu, .menu-overlay { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- STICKY EMERGENCY BANNER -->
+<div id="emergencyBanner" class="bg-red-600 text-white text-center py-2 px-4 text-sm font-medium sticky top-0 z-50">
+  <i class="fas fa-exclamation-triangle mr-1"></i> 🚨 24/7 EMERGENCY DISPATCH: <a href="tel:+94758244216" class="underline font-bold">+94 75 824 4216</a>
+  <span class="ml-2 text-xs opacity-90">• 60-Min Arrival Guarantee • LKR 5,000 Base Dispatch Fee Applies</span>
+</div>
+
+<!-- NAVIGATION with Hamburger -->
+<nav class="border-b bg-white sticky top-0 z-40 shadow-sm">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a href="/" class="font-black text-2xl tracking-tighter text-[#0A2647] font-heading"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7.PLUMBING</a>
+    <ul class="hidden md:flex gap-6 text-sm font-medium">
+      <li><a href="/" class="hover:text-[#F97316] transition">Home</a></li>
+      <li><a href="/services/" class="hover:text-[#F97316] transition">Services</a></li>
+      <li><a href="/commercial/" class="hover:text-[#F97316] transition">Commercial</a></li>
+      <li><a href="/areas/" class="hover:text-[#F97316] transition">Areas</a></li>
+      <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing &amp; Terms</a></li>
+      <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
+      
+      <li><a href="/contact/" class="hover:text-[#F97316] transition">Contact</a></li>
+    </ul>
+    <div class="flex gap-2">
+
+      <a href="tel:+94758244216" class="btn-call text-sm px-3 py-2 rounded-full text-white font-semibold shadow-sm inline-flex items-center gap-1"><i class="fas fa-phone-alt"></i> Call Now</a>
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-[#0A2647] ml-2"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Slide Menu -->
+<div id="mobileMenuOverlay" class="menu-overlay"></div>
+<div id="mobileMenu" class="mobile-menu">
+  <div class="flex justify-between items-center border-b pb-3 mb-4">
+    <span class="font-bold text-xl text-[#0A2647]"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7</span>
+    <button id="closeMobileMenu" class="text-2xl text-[#0A2647]"><i class="fas fa-times"></i></button>
+  </div>
+  <ul class="space-y-4 text-base font-medium">
+    <li><a href="/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-home w-6"></i> Home</a></li>
+    <li><a href="/services/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-wrench w-6"></i> Services</a></li>
+    <li><a href="/commercial/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-building w-6"></i> Commercial</a></li>
+    <li><a href="/areas/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-map-marker-alt w-6"></i> Areas</a></li>
+    <li><a href="/pricing/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-tag w-6"></i> Pricing</a></li>
+    <li><a href="/faq/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-question-circle w-6"></i> FAQ</a></li>
+    
+    <li><a href="/contact/" class="block py-2 hover:text-[#F97316]"><i class="fas fa-envelope w-6"></i> Contact</a></li>
+    <li class="pt-4"><a href="tel:+94758244216" class="btn-call text-white text-center block py-2 rounded-full"><i class="fas fa-phone-alt mr-1"></i> Emergency Call</a></li>
+  </ul>
+</div>
+
+<!-- THANK YOU HERO -->
+<section class="py-16 md:py-24 border-b">
+  <div class="container mx-auto px-4 max-w-2xl text-center">
+    <div class="w-20 h-20 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-6"><i class="fas fa-check text-3xl"></i></div>
+    <h1 class="text-3xl md:text-4xl font-black text-[#0A2647] mb-4">Dispatch Request Received</h1>
+    <p class="text-gray-600 mb-6">We've got your details. A dispatch coordinator will WhatsApp you within 3 minutes to verify the emergency and authorize the LKR 5,000 deployment hold. Need us faster? Call +94 75 824 4216.</p>
+    <div class="bg-white border rounded-xl p-6 shadow-sm text-left max-w-lg mx-auto mb-8">
+      <ul class="space-y-3 text-sm text-gray-700">
+        <li class="flex items-start gap-3"><i class="fas fa-bolt text-[#F97316] mt-1"></i><span><strong>Next step:</strong> A coordinator WhatsApps you within 3 minutes to verify the emergency via video.</span></li>
+        <li class="flex items-start gap-3"><i class="fas fa-shield-alt text-[#F97316] mt-1"></i><span><strong>Deployment hold:</strong> The LKR 5,000 dispatch fee secures your 60-minute arrival slot. Labor billed only after you approve the work.</span></li>
+        <li class="flex items-start gap-3"><i class="fas fa-medal text-[#F97316] mt-1"></i><span><strong>Shield:</strong> Every repair is backed by the 6-month workmanship shield. Pay after service.</span></li>
+      </ul>
+    </div>
+    <div class="flex flex-col sm:flex-row justify-center gap-3">
+      <a href="https://wa.me/94758244216?text=FASTER%20-%20confirming%20my%20plumbing%20request" class="btn-whatsapp text-white font-bold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> Faster? WhatsApp us now</a>
+      <a href="tel:+94758244216" class="btn-call text-white font-bold px-6 py-3 rounded-full inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call +94 75 824 4216</a>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="py-12">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]">While You Wait</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="/services/" class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-wrench text-2xl text-[#F97316] mb-2"></i><h3 class="font-bold text-lg mb-2">Browse Services</h3><p class="text-sm text-gray-600">See pricing and what each of our plumbing services includes.</p></a>
+      <a href="/areas/" class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-map-marker-alt text-2xl text-[#F97316] mb-2"></i><h3 class="font-bold text-lg mb-2">Check Coverage</h3><p class="text-sm text-gray-600">Confirm your suburb and typical arrival times across Colombo.</p></a>
+      <a href="/pricing/" class="border rounded-xl p-5 bg-white hover:shadow-lg transition"><i class="fas fa-tag text-2xl text-[#F97316] mb-2"></i><h3 class="font-bold text-lg mb-2">View Pricing &amp; Terms</h3><p class="text-sm text-gray-600">Understand the LKR 5,000 dispatch fee, hourly rates, and the workmanship shield.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#0A2647] text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div><h3 class="font-bold text-lg mb-4"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7 PLUMBING</h3><p class="text-sm opacity-80">Colombo's premier emergency plumbing dispatch network.</p></div>
+      <div><h4 class="font-bold mb-3">Quick Links</h4><ul class="space-y-2 text-sm"><li><a href="/" class="opacity-80 hover:opacity-100">Home</a></li><li><a href="/services/" class="opacity-80 hover:opacity-100">Services</a></li><li><a href="/commercial/" class="opacity-80 hover:opacity-100">Commercial</a></li><li><a href="/areas/" class="opacity-80 hover:opacity-100">Areas</a></li><li><a href="/pricing/" class="opacity-80 hover:opacity-100">Pricing &amp; Terms</a></li><li><a href="/faq/" class="opacity-80 hover:opacity-100">FAQ</a></li><li><a href="/disclaimer/" class="opacity-80 hover:opacity-100">Disclaimer</a></li><li><a href="/contact/" class="opacity-80 hover:opacity-100">Contact</a></li></ul></div>
+      <div><h4 class="font-bold mb-3">Contact</h4><ul class="space-y-2 text-sm"><li><a href="tel:+94758244216" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a></li><li><a href="mailto:plumbing@six7.lk" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fas fa-envelope"></i> plumbing@six7.lk</a></li><li><a href="https://wa.me/94758244216" class="opacity-80 hover:opacity-100 flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div>
+      <div><h4 class="font-bold mb-3">Service Areas</h4><p class="text-xs opacity-80">Colombo 01-15, Dehiwala, Mount Lavinia, Kotte, Nugegoda, Battaramulla, Rajagiriya, Kaduwela, Malabe, Moratuwa</p></div>
+    </div>
+    <div class="border-t border-blue-800 pt-6 text-center text-xs opacity-70"><p>© 2026 SIX7 Plumbing Dispatch Network. All rights reserved. | 6-Month Workmanship Shield | LKR 5,000 Dispatch + LKR 3,000/hr</p><p class="mt-2"><a href="/disclaimer/" class="underline hover:opacity-100">Pricing Policy & Disclaimer</a> • <a href="/areas/" class="underline hover:opacity-100">Full Coverage Map</a></p><p class="mt-2">Made with <i class="fas fa-heart text-red-400"></i> by SIX7 Team</p></div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  const closeBtn = document.getElementById('closeMobileMenu');
+  function openMenu() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
+  if(menuBtn) menuBtn.addEventListener('click', openMenu);
+  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if(overlay) overlay.addEventListener('click', closeMenu);
+</script>
+  <script src="/emergency.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@
         // electricalAdUrl: 'https://electrical.six7.lk',
         // cleaningAdUrl: 'https://six7.lk/cleaning',
         // junkRemovalAdUrl: 'https://six7.lk/junk-removal',
-        // reviewUrl: 'https://six7.lk/p-review'
+        // reviewUrl: 'https://plumbing.six7.lk/review/'
     };
 
     let popupDismissed = sessionStorage.getItem(CONFIG.bannerDismissedKey) === 'true';
@@ -402,24 +402,23 @@
                     <div class="six7-popup-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
-                    <h2 class="six7-popup-title">Emergency Plumbing?</h2>
+                    <h2 class="six7-popup-title">Emergency Plumbing Dispatch</h2>
                     <div class="six7-popup-divider"></div>
                     <p class="six7-popup-subtitle">
-                        Don't wait for water damage to get worse.<br>
-                        Our team is ready 24/7 for all plumbing emergencies.
+                        Water damage spreads fast. We deploy vetted contractors to your location in 60 minutes.
                     </p>
                     <div class="six7-emergency-number">
                         <i class="fas fa-exclamation-triangle" style="color: #F97316;"></i>
                         <span>Call Now: ${CONFIG.phoneDisplay}</span>
                     </div>
                     <a href="tel:${CONFIG.phoneNumber}" class="six7-call-btn" id="six7CallBtn">
-                        <i class="fas fa-phone-alt"></i> Call Emergency Line
+                        <i class="fas fa-phone-alt"></i> Call Dispatch Center
                     </a>
-                    <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-wa-btn" target="_blank">
+                    <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20DISPATCH%20NEEDED" class="six7-wa-btn" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp Emergency
                     </a>
                     <a href="${CONFIG.pricingPageUrl}" class="six7-pricing-link" id="six7PricingLink">
-                        <i class="fas fa-tag"></i> View Our Pricing & Rates →
+                        <i class="fas fa-tag"></i> View Dispatch Terms &amp; Rates →
                     </a>
                 </div>
             </div>
@@ -436,7 +435,7 @@
             <a href="tel:${CONFIG.phoneNumber}" class="six7-floating-call" id="six7FloatingCall">
                 <i class="fas fa-phone-alt"></i>
             </a>
-            <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20PLUMBING%20NEEDED" class="six7-floating-wa" id="six7FloatingWa" target="_blank">
+            <a href="https://wa.me/${CONFIG.whatsappNumber}?text=EMERGENCY%20DISPATCH%20NEEDED" class="six7-floating-wa" id="six7FloatingWa" target="_blank">
                 <i class="fab fa-whatsapp"></i>
             </a>
         `;
