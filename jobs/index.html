@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e9e1d6",
+                        "on-surface-variant": "#584237",
+                        "primary-container": "#f97316",
+                        "primary": "#9d4300",
+                        "on-background": "#1e1b14",
+                        "outline-variant": "#e0c0b1",
+                        "surface": "#fff8f0",
+                        "inverse-on-surface": "#f8f0e4",
+                        "on-primary-container": "#582200",
+                        "primary-fixed": "#ffdbca",
+                        "tertiary-container": "#d0a706",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-fixed-variant": "#30476a",
+                        "secondary-fixed-dim": "#b0c8f1",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fbf3e7",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#341100",
+                        "surface-bright": "#fff8f0",
+                        "secondary-container": "#bbd3fd",
+                        "on-secondary-fixed": "#001c3b",
+                        "primary-fixed-dim": "#ffb690",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#4f3e00",
+                        "on-primary-fixed-variant": "#783200",
+                        "surface-container-highest": "#e9e1d6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8c7164",
+                        "surface-container-high": "#efe7db",
+                        "inverse-surface": "#343028",
+                        "secondary": "#485f83",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1e1b14",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#9d4300",
+                        "tertiary-fixed-dim": "#edc22e",
+                        "tertiary": "#745c00",
+                        "surface-container": "#f5ede1",
+                        "background": "#fff8f0",
+                        "secondary-fixed": "#d5e3ff",
+                        "surface-dim": "#e1d9cd",
+                        "inverse-primary": "#ffb690",
+                        "on-secondary-container": "#435b7e",
+                        "tertiary-fixed": "#ffe089",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Work Sans"],
+                        "h1": ["Work Sans"],
+                        "label-caps": ["Inter"],
+                        "h1-mobile": ["Work Sans"],
+                        "h3": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "h2": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1-mobile": ["32px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "h3": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .neo-shadow {
+            box-shadow: 4px 4px 0px 0px #1e1b14;
+        }
+        .neo-shadow-hover:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #1e1b14;
+        }
+        .neo-shadow-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px 0px #1e1b14;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e1b14;
+            border-radius: 4px;
+        }
+        .sticky-sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+        @media (max-width: 768px) {
+            .sticky-sidebar {
+                position: static;
+                max-height: none;
+            }
+        }
+        
+        .icon-svg { width: 1.25em; height: 1.25em; flex-shrink: 0; display: inline-block; vertical-align: middle; }
+        .icon-svg-sm { width: 1em; height: 1em; }
+        .icon-svg-md { width: 1.5em; height: 1.5em; }
+        .icon-svg-lg { width: 2em; height: 2em; }
+        .icon-svg-xl { width: 2.5em; height: 2.5em; }
+
+        .completed-sticker { background-color: #22C55E; color: white; border: 2px solid #0A2647; text-shadow: 1px 1px 0px #0A2647; }
+        .tag-orange { background-color: #f97316; color: #582200; }
+        .tag-teal { background-color: #2DD4BF; color: #1e1b14; }
+        .tag-yellow { background-color: #FFD23F; color: #1e1b14; }
+        .tag-white { background-color: #fff8f0; color: #1e1b14; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  <title>Latest Plumbing Jobs Colombo | Real Dispatches, Real Fixes – SIX7</title>
+  <meta name="description" content="Real photos from real SIX7 dispatches across Colombo: burst mains, tank installs, sewer jetting. Updated weekly. See the work before you book.">
+  <link rel="canonical" href="https://plumbing.six7.lk/jobs/">
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden pb-24 md:pb-0">
+<div id="uniform-emergency-strip" class="bg-[#EF4444] text-white text-center text-sm font-bold py-2 px-3 border-b-2 border-[#0A2647]">
+  <a href="tel:+94758244216" class="inline-flex items-center gap-2">
+    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 9v4"/>
+      <path d="M12 17h.01"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+    24/7 EMERGENCY: +94 75 824 4216
+  </a>
+  <span class="hidden sm:inline text-xs opacity-90 ml-2">• 60-min arrival • Callout fee applies</span>
+</div>
+<header id="uniform-header" class="sticky top-0 z-50 bg-[#FBF3E7] border-b-2 border-[#0A2647]">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-black text-lg text-[#0A2647]" style="font-family:'Work Sans',sans-serif;">
+      <span class="bg-[#F97316] text-white p-2 rounded-xl border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647]">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 7l-5 5 4 4 5-5-4-4z"/>
+          <path d="M4 20l7-7"/>
+        </svg>
+      </span>
+      SIX7.PLUMBING
+    </a>
+    <nav id="uniform-desktop-nav" class="hidden md:flex items-center gap-5 font-semibold text-[#0A2647]">
+      <a href="/" class="hover:text-[#F97316]">Home</a>
+      <a href="/services/" class="hover:text-[#F97316]">Services</a>
+      <a href="/areas/" class="hover:text-[#F97316]">Areas</a>
+      <a href="/jobs/" class="text-[#F97316]">Latest Jobs</a>
+      <a href="/pricing/" class="hover:text-[#F97316]">Pricing &amp; Terms</a>
+      <a href="/commercial/" class="hover:text-[#F97316]">Commercial</a>
+      <a href="/contact/" class="hover:text-[#F97316]">Contact</a>
+      <a href="tel:+94758244216" class="bg-[#EF4444] text-white px-4 py-2 rounded-full border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647] inline-flex items-center gap-2">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Call Now
+      </a>
+    </nav>
+    <button onclick="document.getElementById('uniform-mobile-menu').classList.toggle('hidden')" class="md:hidden bg-white p-2 rounded-xl border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647]" aria-label="Open menu">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="uniform-mobile-menu" class="hidden md:hidden border-t-2 border-[#0A2647] bg-white px-4 py-3 space-y-2 font-semibold text-[#0A2647]">
+    <a href="/" class="block py-1">Home</a>
+    <a href="/services/" class="block py-1">Services</a>
+    <a href="/areas/" class="block py-1">Areas</a>
+    <a href="/jobs/" class="block py-1 text-[#F97316]">Latest Jobs</a>
+    <a href="/pricing/" class="block py-1">Pricing &amp; Terms</a>
+    <a href="/commercial/" class="block py-1">Commercial</a>
+    <a href="/faq/" class="block py-1">FAQ</a>
+    <a href="/contact/" class="block py-1">Contact</a>
+  </div>
+</header>
+
+<main class="flex-grow flex flex-col md:flex-row w-full max-w-[1600px] mx-auto pt-[80px] pb-[120px] px-margin-desktop gap-gutter relative z-10">
+
+  <!-- Left Sidebar Filter Group (Desktop - Fixed) -->
+  <aside class="hidden md:flex flex-col w-72 shrink-0 gap-6 sticky-sidebar pr-4 pb-4">
+    <div class="bg-surface-container-lowest border-2 border-on-background rounded-xl p-6 neo-shadow flex flex-col gap-6">
+      <div>
+        <h3 class="font-h3 text-h3 mb-4">Filters</h3>
+        <div class="w-full h-0.5 bg-on-background mb-4"></div>
+      </div>
+      <!-- Service Type -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-label-caps text-label-caps">Service Type</h4>
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <input checked class="w-5 h-5 rounded border-2 border-on-background text-primary-container focus:ring-primary-container bg-surface cursor-pointer" type="checkbox"/>
+          <span class="font-body-md text-body-md group-hover:font-bold transition-all">Leak Repair</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <input checked class="w-5 h-5 rounded border-2 border-on-background text-primary-container focus:ring-primary-container bg-surface cursor-pointer" type="checkbox"/>
+          <span class="font-body-md text-body-md group-hover:font-bold transition-all">Drain Cleaning</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <input class="w-5 h-5 rounded border-2 border-on-background text-primary-container focus:ring-primary-container bg-surface cursor-pointer" type="checkbox"/>
+          <span class="font-body-md text-body-md group-hover:font-bold transition-all">Tanks &amp; Pumps</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <input class="w-5 h-5 rounded border-2 border-on-background text-primary-container focus:ring-primary-container bg-surface cursor-pointer" type="checkbox"/>
+          <span class="font-body-md text-body-md group-hover:font-bold transition-all">Water Heaters</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer group">
+          <input class="w-5 h-5 rounded border-2 border-on-background text-primary-container focus:ring-primary-container bg-surface cursor-pointer" type="checkbox"/>
+          <span class="font-body-md text-body-md group-hover:font-bold transition-all">Sewer</span>
+        </label>
+      </div>
+      <!-- Status -->
+      <div class="flex flex-col gap-3">
+        <h4 class="font-label-caps text-label-caps">Job Status</h4>
+        <div class="flex flex-wrap gap-2">
+          <button class="bg-tertiary-container text-on-tertiary-container border-2 border-on-background rounded-full px-3 py-1 font-label-caps text-label-caps text-xs neo-shadow-hover transition-all">All Jobs</button>
+          <button class="bg-surface border-2 border-on-background rounded-full px-3 py-1 font-label-caps text-label-caps text-xs hover:bg-surface-variant transition-all">Completed</button>
+          <button class="bg-surface border-2 border-on-background rounded-full px-3 py-1 font-label-caps text-label-caps text-xs hover:bg-surface-variant transition-all">In Progress</button>
+        </div>
+      </div>
+      <button class="w-full bg-primary-container text-on-primary-container border-2 border-on-background rounded-xl py-3 font-label-caps text-label-caps mt-2 neo-shadow neo-shadow-hover neo-shadow-active transition-all">Apply Filters</button>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <section class="flex-grow">
+
+    <!-- Hero -->
+    <div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 mb-3 bg-[#D8B4E2] text-[#1e1b14] border-2 border-[#0A2647] rounded-full px-3 py-1 font-bold text-[14px] leading-none tracking-[0.05em] neo-shadow rotate-3" style="font-family:'Inter',sans-serif;">
+          <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          UPDATED WEEKLY
+        </div>
+        <h1 class="font-h1 text-h1 mb-2">Latest Jobs. Real Photos. Real Fixes.</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Every card is a completed dispatch. What we did, where, and how long it took.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-sm text-on-surface-variant hidden md:inline">Showing 1–7 of 14</span>
+        <button class="bg-surface-container-highest border-2 border-on-background rounded-lg px-4 py-2 font-label-caps text-label-caps flex items-center gap-2 neo-shadow-hover transition-all">
+          <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+          Newest
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Filter Chips (Mobile friendly) -->
+    <div class="flex gap-3 overflow-x-auto hide-scrollbar pb-4 pt-2 -mx-4 px-4 snap-x mb-6 md:hidden">
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#0A2647] text-[#fff8f0] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow">All Jobs</button>
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#fff8f0] text-[#1e1b14] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow hover:bg-[#e9e1d6]">Leak Repair</button>
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#fff8f0] text-[#1e1b14] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow hover:bg-[#e9e1d6]">Drain Cleaning</button>
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#fff8f0] text-[#1e1b14] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow hover:bg-[#e9e1d6]">Tanks &amp; Pumps</button>
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#fff8f0] text-[#1e1b14] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow hover:bg-[#e9e1d6]">Heaters</button>
+      <button class="snap-start shrink-0 border-2 border-[#0A2647] bg-[#fff8f0] text-[#1e1b14] rounded-full px-4 py-2 text-[16px] font-bold neo-shadow hover:bg-[#e9e1d6]">Sewer</button>
+    </div>
+
+    <!-- Masonry Grid -->
+    <div class="columns-1 md:columns-2 gap-gutter space-y-gutter">
+
+      <!-- Job 1 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-64 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Concealed joint leak traced acoustically, sealed and pressure-tested in Kolonnawa — SIX7 Plumbing" src="/assets/img/jobs/job-01.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-2deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Leak Repair</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Kolonnawa</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Concealed joint leak traced acoustically, sealed + pressure-tested.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              This week
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              90 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 2 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Blocked floor drain cleared by mechanical rodding in Dehiwala — SIX7 Plumbing" src="/assets/img/jobs/job-02.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[3deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Drain Cleaning</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Dehiwala</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Blocked floor drain cleared by mechanical rodding — no chemicals, no shortcuts.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              This week
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              60 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 3 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Roof tank float valve replaced and overflow pipe rerouted in Nugegoda — SIX7 Plumbing" src="/assets/img/jobs/job-03.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-1deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Tanks &amp; Pumps</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Nugegoda</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Roof tank float valve replaced and overflow pipe rerouted — same visit.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Last week
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              75 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Interstitial CTA after card 3 -->
+      <div class="break-inside-avoid bg-[#0A2647] text-[#fff8f0] border-2 border-[#0A2647] neo-shadow rounded-[16px] p-6 flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#f97316] border-2 border-[#0A2647] neo-shadow flex items-center justify-center rotate-12 mb-2">
+          <svg class="icon-svg text-[#1e1b14]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        <h3 class="text-[24px] leading-[1.2] tracking-[-0.01em] font-extrabold text-[#fff8f0]" style="font-family:'Work Sans',sans-serif;">Same problem?</h3>
+        <p class="text-[16px] leading-[1.6] text-[#e9e1d6] mb-2">WhatsApp a 10-second video — rate + ETA in minutes.</p>
+        <a href="https://wa.me/94758244216?text=EMERGENCY%20PLUMBING%20NEEDED" class="w-full bg-[#22C55E] text-white border-2 border-[#0A2647] neo-shadow py-4 rounded-xl font-bold text-[14px] leading-none tracking-[0.05em] flex items-center justify-center gap-2 hover:brightness-110 transition-all" style="font-family:'Inter',sans-serif;">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 4.244 2.204 7.957 5.494 10.076l-.754 3.736 3.905-2.005c1.066.33 2.207.508 3.355.508 6.627 0 12-5.373 12-12S18.627 0 12 0zm0 3.564c4.657 0 8.436 3.779 8.436 8.436s-3.779 8.436-8.436 8.436c-1.481 0-2.885-.385-4.107-1.066l-2.461 1.263.619-2.954C4.385 16.423 3.564 14.283 3.564 12c0-4.657 3.779-8.436 8.436-8.436z"/></svg>
+          WHATSAPP NOW
+        </a>
+      </div>
+
+      <!-- Job 4 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Burst copper main isolated, cut out and replaced in Colombo — SIX7 Plumbing" src="/assets/img/jobs/job-04.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[2deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Leak Repair</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Colombo</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Burst copper main isolated, cut out and replaced — tested to 4 bar.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              Last week
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              120 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 5 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sewer line jetted and CCTV surveyed in Kotte — SIX7 Plumbing" src="/assets/img/jobs/job-05.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-3deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Sewer</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Kotte</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Sewer line jetted and CCTV surveyed — root intrusion cleared.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              2 weeks ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              180 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 6 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Geyser element and thermostat replaced in Battaramulla — SIX7 Plumbing" src="/assets/img/jobs/job-06.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[1deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Heaters</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Battaramulla</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Geyser element and thermostat replaced — hot water restored same visit.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              2 weeks ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              90 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 7 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Sump pump installed with non-return valve in Kolonnawa — SIX7 Plumbing" src="/assets/img/jobs/job-07.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-2deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Tanks &amp; Pumps</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Kolonnawa</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Sump pump installed with non-return valve — flood-prone basement protected.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              3 weeks ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              150 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Interstitial CTA after card 8 -->
+      <div class="break-inside-avoid bg-[#0A2647] text-[#fff8f0] border-2 border-[#0A2647] neo-shadow rounded-[16px] p-6 flex flex-col items-center text-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#22C55E] border-2 border-[#0A2647] neo-shadow flex items-center justify-center -rotate-12 mb-2">
+          <svg class="icon-svg text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+        </div>
+        <h3 class="text-[24px] leading-[1.2] tracking-[-0.01em] font-extrabold text-[#fff8f0]" style="font-family:'Work Sans',sans-serif;">Got a similar issue?</h3>
+        <p class="text-[16px] leading-[1.6] text-[#e9e1d6] mb-2">Our dispatch is ready to help 24/7. Don't wait for the damage to spread.</p>
+        <a href="tel:+94758244216" class="w-full bg-[#EF4444] text-white border-2 border-[#0A2647] neo-shadow py-4 rounded-xl font-bold text-[14px] leading-none tracking-[0.05em] flex items-center justify-center gap-2 hover:brightness-110 transition-all" style="font-family:'Inter',sans-serif;">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          CALL NOW
+        </a>
+      </div>
+
+      <!-- Job 8 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Grease trap cleaned and lines flushed in Mt Lavinia restaurant — SIX7 Plumbing" src="/assets/img/jobs/job-08.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[2deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Drain Cleaning</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Mt Lavinia</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Grease trap cleaned and lines flushed — restaurant back in service.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              3 weeks ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              120 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 9 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Toilet cistern internals replaced and base resealed in Kohuwala — SIX7 Plumbing" src="/assets/img/jobs/job-09.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-1deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Leak Repair</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Kohuwala</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Toilet cistern internals replaced and base resealed — ghost flush fixed.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              1 month ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              60 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 10 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Water tank cleaned and UV sterilised in Boralasgamuwa — SIX7 Plumbing" src="/assets/img/jobs/job-10.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[3deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Tanks &amp; Pumps</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Boralasgamuwa</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Water tank cleaned and UV sterilised — sediment flush, filter replaced.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              1 month ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              90 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 11 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Bathroom mixer tap replaced with corrosion-rated fitting in Dehiwala — SIX7 Plumbing" src="/assets/img/jobs/job-11.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[-2deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Leak Repair</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Dehiwala</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Bathroom mixer tap replaced with corrosion-rated fitting — coastal property.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              1 month ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              45 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 12 -->
+      <article class="break-inside-avoid bg-surface-container-lowest border-2 border-on-background rounded-xl overflow-hidden neo-shadow flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+        <div class="relative h-48 border-b-2 border-on-background overflow-hidden">
+          <div class="absolute inset-0 bg-secondary-fixed/20 group-hover:bg-transparent transition-colors z-10"></div>
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Drain camera survey and root cutting in Kaduwela — SIX7 Plumbing" src="/assets/img/jobs/job-12.jpg">
+          <div class="absolute top-3 right-3 completed-sticker px-3 py-1 font-bold text-[14px] leading-none rounded-md neo-shadow rotate-[1deg]" style="font-family:'Inter',sans-serif;letter-spacing:0.05em;">COMPLETED</div>
+        </div>
+        <div class="p-6 flex flex-col gap-4">
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-primary-fixed text-on-primary-fixed border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Sewer</span>
+            <span class="bg-surface-variant text-on-surface-variant border border-on-background px-2 py-0.5 rounded text-xs font-label-caps">Kaduwela</span>
+          </div>
+          <div class="flex justify-between items-start">
+            <h2 class="font-h3 text-h3 leading-tight">Drain camera survey and root cutting — new-build snag resolved.</h2>
+          </div>
+          <div class="flex items-center gap-3 pt-4 border-t-2 border-on-background/10 mt-auto">
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#fff8f0] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              1 month ago
+            </div>
+            <div class="flex items-center gap-1 border-2 border-on-background bg-[#FFD23F] px-2 py-1 rounded-sm text-[12px] font-bold">
+              <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              120 min
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Interstitial CTA after card 12 -->
+      <div class="break-inside-avoid bg-[#0A2647] text-[#fff8f0] border-2 border-[#0A2647] neo-shadow rounded-[16px] p-6

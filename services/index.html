@@ -1,398 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Services | SIX7 Plumbing Dispatch Network</title>
-  <link rel="canonical" href="https://plumbing.six7.lk/services/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e9e1d6",
+                        "on-surface-variant": "#584237",
+                        "primary-container": "#f97316",
+                        "primary": "#9d4300",
+                        "on-background": "#1e1b14",
+                        "outline-variant": "#e0c0b1",
+                        "surface": "#fff8f0",
+                        "inverse-on-surface": "#f8f0e4",
+                        "on-primary-container": "#582200",
+                        "primary-fixed": "#ffdbca",
+                        "tertiary-container": "#d0a706",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#241a00",
+                        "on-secondary-fixed-variant": "#30476a",
+                        "secondary-fixed-dim": "#b0c8f1",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fbf3e7",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#341100",
+                        "surface-bright": "#fff8f0",
+                        "secondary-container": "#bbd3fd",
+                        "on-secondary-fixed": "#001c3b",
+                        "primary-fixed-dim": "#ffb690",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#4f3e00",
+                        "on-primary-fixed-variant": "#783200",
+                        "surface-container-highest": "#e9e1d6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8c7164",
+                        "surface-container-high": "#efe7db",
+                        "inverse-surface": "#343028",
+                        "secondary": "#485f83",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1e1b14",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#9d4300",
+                        "tertiary-fixed-dim": "#edc22e",
+                        "tertiary": "#745c00",
+                        "surface-container": "#f5ede1",
+                        "background": "#fff8f0",
+                        "secondary-fixed": "#d5e3ff",
+                        "surface-dim": "#e1d9cd",
+                        "inverse-primary": "#ffb690",
+                        "on-secondary-container": "#435b7e",
+                        "tertiary-fixed": "#ffe089",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Work Sans"],
+                        "h1": ["Work Sans"],
+                        "label-caps": ["Inter"],
+                        "h1-mobile": ["Work Sans"],
+                        "h3": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "h2": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "900" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1-mobile": ["32px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "h3": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px #1e1b14; }
+        .neo-shadow-sm { box-shadow: 2px 2px 0px 0px #1e1b14; }
+        .neo-border { border: 2px solid #1e1b14; }
+        .neo-btn { transition: all 0.15s ease-in-out; }
+        .neo-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #1e1b14; }
+        .sticker-icon { background-color: #ffd23f; }
+        .accordion-content { display: none; }
+        .accordion-toggle:checked ~ .accordion-content { display: block; }
+        .accordion-toggle:checked ~ .accordion-label .icon-expand { transform: rotate(180deg); }
+        .icon-svg { width: 1.25em; height: 1.25em; flex-shrink: 0; display: inline-block; vertical-align: middle; }
+        .icon-svg-sm { width: 1em; height: 1em; }
+        .icon-svg-md { width: 1.5em; height: 1.5em; }
+        .icon-svg-lg { width: 2em; height: 2em; }
+        .icon-svg-xl { width: 2.5em; height: 2.5em; }
+        .icon-svg-2xl { width: 3em; height: 3em; }
+        .icon-svg-3xl { width: 3.5em; height: 3.5em; }
+        .icon-svg-4xl { width: 4em; height: 4em; }
+    </style>
+  <title>Plumbing Services Colombo | 30+ Repairs &amp; Installations – SIX7 Plumbing</title>
+  <meta name="description" content="Leak repair, drain cleaning, water tanks, geysers, sewer jetting and more. Every rate published. 60-min dispatch across Colombo &amp; Western Province. 24/7.">
+  <link rel="canonical" href="https://plumbing.six7.lk/services/">
 
-  <meta name="description" content="Expert plumbing services in Colombo: emergency leak repair, drain cleaning, water heater, tank repair, water filters. 60-min arrival, transparent pricing.">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Work+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <meta property="og:type" content="website">
-<meta property="og:url" content="https://plumbing.six7.lk/services/">
-<meta property="og:title" content="Services | SIX7 Plumbing Dispatch Network">
-<meta property="og:description" content="Browse all 33 plumbing services: leaks, drains, tanks, filters, commercial & more. LKR 5,000 dispatch fee + LKR 3,000/hr. 6-month shield. WhatsApp +94 75 824 4216.">
-<meta property="og:image" content="https://plumbing.six7.lk/assets/img/og-plumbing-default.jpg">
-<meta name="twitter:card" content="summary_large_image">
-  <style>
-    body { font-family: 'Inter', sans-serif; background: #F8FAFE; color: #1A2C3E; }
-    h1, h2, h3, h4, .font-heading { font-family: 'Work Sans', sans-serif; }
-    .btn-call { background-color: #DC2626; transition: all 0.2s; }
-    .btn-call:hover { background-color: #B91C1C; }
-    .btn-whatsapp { background-color: #25D366; transition: all 0.2s; }
-    .btn-whatsapp:hover { background-color: #128C7E; }
-    .service-card { transition: transform 0.2s, box-shadow 0.2s; }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -12px rgba(0,0,0,0.15); }
-    details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
-    details summary::-webkit-details-marker { display: none; }
-    details summary::before { content: '\f0fe'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 1rem; color: #F97316; }
-    details[open] summary::before { content: '\f146'; }
-    .location-badge:hover { background-color: #EFF6FF; border-color: #2563EB; }
-    /* Mobile Menu Styles */
-    .mobile-menu { position: fixed; top: 0; right: 0; bottom: 0; width: 85%; max-width: 320px; background: white; z-index: 1000; transform: translateX(100%); transition: transform 0.3s ease-in-out; padding: 1.5rem; box-shadow: -5px 0 30px rgba(0,0,0,0.1); overflow-y: auto; }
-    .mobile-menu.open { transform: translateX(0); }
-    .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 999; display: none; }
-    .menu-overlay.active { display: block; }
-    @media (min-width: 768px) { .mobile-menu, .menu-overlay { display: none; } }
-  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Professional Plumbing Services Colombo",
-    "description": "32+ plumbing services in Colombo & Western Province. Emergency response, leak detection, tank repair, water filters. Transparent hourly billing.",
-    "url": "https://plumbing.six7.lk/services/",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "item": {"@type": "Service", "name": "Emergency Plumbing"}},
-        {"@type": "ListItem", "position": 2, "item": {"@type": "Service", "name": "Leak Detection"}},
-        {"@type": "ListItem", "position": 3, "item": {"@type": "Service", "name": "Water Tank Repair"}},
-        {"@type": "ListItem", "position": 4, "item": {"@type": "Service", "name": "Whole House Water Filter"}}
-      ]
-    }
+    "@type": "Plumber",
+    "name": "SIX7 Plumbing",
+    "image": "https://plumbing.six7.lk/assets/img/ph/home-hero-1.jpg",
+    "url": "https://plumbing.six7.lk",
+    "telephone": "+94758244216",
+    "email": "plumbing@six7.lk",
+    "priceRange": "LKR 2,500 - LKR 18,000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mount Lavinia",
+      "addressRegion": "Western Province",
+      "addressCountry": "LK"
+    },
+    "areaServed": ["Colombo", "Dehiwala", "Mount Lavinia", "Nugegoda", "Kotte", "Battaramulla", "Maharagama", "Piliyandala", "Kalutara", "Horana", "Padukka", "Homagama"],
+    "openingHours": "Mo-Su 00:00-23:59",
+    "sameAs": ["https://wa.me/94758244216"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://plumbing.six7.lk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://plumbing.six7.lk/services/"
+      }
+    ]
   }
   </script>
 </head>
-<body>
-
-<!-- EMERGENCY BANNER -->
-<div class="bg-red-600 text-white text-center py-2 px-4 text-sm font-medium">
-  <i class="fas fa-exclamation-triangle mr-1"></i> 🚨 24/7 EMERGENCY DISPATCH: <a href="tel:+94758244216" class="underline font-bold">+94 75 824 4216</a>
-  <span class="ml-2 text-xs opacity-90">• 60-Min Arrival Guarantee • LKR 5,000 Base Dispatch Fee Applies</span>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32 pb-24 md:pb-0">
+<div id="uniform-emergency-strip" class="bg-[#EF4444] text-white text-center text-sm font-bold py-2 px-3 border-b-2 border-[#0A2647]">
+  <a href="tel:+94758244216" class="inline-flex items-center gap-2">
+    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 9v4"/>
+      <path d="M12 17h.01"/>
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+    24/7 EMERGENCY: +94 75 824 4216
+  </a>
+  <span class="hidden sm:inline text-xs opacity-90 ml-2">• 60-min arrival • Callout fee applies</span>
 </div>
+<header id="uniform-header" class="sticky top-0 z-50 bg-[#FBF3E7] border-b-2 border-[#0A2647]">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2 font-black text-lg text-[#0A2647]" style="font-family:'Work Sans',sans-serif;">
+      <span class="bg-[#F97316] text-white p-2 rounded-xl border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647]">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 7l-5 5 4 4 5-5-4-4z"/>
+          <path d="M4 20l7-7"/>
+        </svg>
+      </span>
+      SIX7.PLUMBING
+    </a>
+    <nav id="uniform-desktop-nav" class="hidden md:flex items-center gap-5 font-semibold text-[#0A2647]">
+      <a href="/" class="hover:text-[#F97316]">Home</a>
+      <a href="/services/" class="hover:text-[#F97316]">Services</a>
+      <a href="/areas/" class="hover:text-[#F97316]">Areas</a>
+      <a href="/jobs/" class="hover:text-[#F97316]">Latest Jobs</a>
+      <a href="/pricing/" class="hover:text-[#F97316]">Pricing &amp; Terms</a>
+      <a href="/commercial/" class="hover:text-[#F97316]">Commercial</a>
+      <a href="/contact/" class="hover:text-[#F97316]">Contact</a>
+      <a href="tel:+94758244216" class="bg-[#EF4444] text-white px-4 py-2 rounded-full border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647] inline-flex items-center gap-2">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        Call Now
+      </a>
+    </nav>
+    <button onclick="document.getElementById('uniform-mobile-menu').classList.toggle('hidden')" class="md:hidden bg-white p-2 rounded-xl border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647]" aria-label="Open menu">
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div id="uniform-mobile-menu" class="hidden md:hidden border-t-2 border-[#0A2647] bg-white px-4 py-3 space-y-2 font-semibold text-[#0A2647]">
+    <a href="/" class="block py-1">Home</a>
+    <a href="/services/" class="block py-1">Services</a>
+    <a href="/areas/" class="block py-1">Areas</a>
+    <a href="/jobs/" class="block py-1">Latest Jobs</a>
+    <a href="/pricing/" class="block py-1">Pricing &amp; Terms</a>
+    <a href="/commercial/" class="block py-1">Commercial</a>
+    <a href="/faq/" class="block py-1">FAQ</a>
+    <a href="/contact/" class="block py-1">Contact</a>
+  </div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col gap-24">
 
-<!-- NAVIGATION with Hamburger Menu -->
-<nav class="border-b bg-white sticky top-0 z-50 shadow-sm">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="font-black text-2xl tracking-tighter text-[#0A2647] font-heading"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7.PLUMBING</a>
-    <ul class="hidden md:flex gap-6 text-sm font-medium">
-      <li><a href="/" class="hover:text-[#F97316] transition">Home</a></li>
-      <li><a href="/services/" class="text-[#F97316] border-b-2 border-[#F97316] pb-1">Services</a></li>
-      <li><a href="/commercial/" class="hover:text-[#F97316] transition">Commercial</a></li>
-      <li><a href="/areas/" class="hover:text-[#F97316] transition">Areas</a></li>
-      <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing &amp; Terms</a></li>
-      <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
-      <li><a href="/contact/" class="hover:text-[#F97316] transition">Contact</a></li>
-    </ul>
-    <div class="flex gap-2">
-      <a href="tel:+94758244216" class="btn-call text-sm px-3 py-2 rounded-full text-white font-semibold shadow-sm inline-flex items-center gap-1"><i class="fas fa-phone-alt"></i> Call Now</a>
-      <button id="mobileMenuBtn" class="md:hidden text-2xl text-[#0A2647] ml-2"><i class="fas fa-bars"></i></button>
+  <!-- Hero Section -->
+  <section class="flex flex-col gap-6 text-center items-center">
+    <div class="inline-block bg-[#FFD23F] text-on-background border-2 border-on-background font-label-caps text-label-caps uppercase px-4 py-2 transform -rotate-1 neo-shadow-sm">
+      SERVICES
     </div>
-  </div>
-</nav>
-
-<!-- Mobile Menu Slide-out -->
-<div id="mobileMenuOverlay" class="menu-overlay"></div>
-<div id="mobileMenu" class="mobile-menu">
-  <div class="flex justify-between items-center border-b pb-3 mb-4">
-    <span class="font-bold text-xl text-[#0A2647]"><i class="fas fa-wrench text-[#F97316] mr-2"></i>SIX7</span>
-    <button id="closeMobileMenu" class="text-2xl text-[#0A2647]"><i class="fas fa-times"></i></button>
-  </div>
-  <ul class="space-y-4 text-base font-medium">
-    <li><a href="/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-home w-6"></i> Home</a></li>
-    <li><a href="/services/" class="block py-2 text-[#F97316] font-bold"><i class="fas fa-wrench w-6"></i> Services</a></li>
-    <li><a href="/commercial/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-building w-6"></i> Commercial</a></li>
-    <li><a href="/areas/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-map-marker-alt w-6"></i> Areas</a></li>
-    <li><a href="/pricing/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-tag w-6"></i> Pricing</a></li>
-    <li><a href="/faq/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-question-circle w-6"></i> FAQ</a></li>
-    <li><a href="/contact/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-envelope w-6"></i> Contact</a></li>
-    <li><a href="/review/" class="block py-2 hover:text-[#F97316] transition"><i class="fas fa-star w-6"></i> Leave a Review</a></li>
-    <li class="pt-4"><a href="tel:+94758244216" class="btn-call text-white text-center block py-2 rounded-full"><i class="fas fa-phone-alt mr-1"></i> Emergency Call</a></li>
-  </ul>
-</div>
-
-<!-- BREADCRUMB -->
-<div class="container mx-auto px-4 py-3 text-sm text-gray-600">
-  <a href="/" class="hover:underline">Home</a> <span class="mx-2">›</span> <span class="font-medium text-[#0A2647]">Services</span>
-</div>
-
-<!-- HERO SECTION -->
-<section class="py-10 bg-gradient-to-r from-blue-50 to-white">
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-[#0A2647]">Professional Plumbing Dispatch Services in Colombo</h1>
-    <p class="text-lg text-gray-700 mb-6 max-w-4xl">SIX7 Plumbing Dispatch Network connects you with vetted, independent plumbing contractors across Colombo and the Western Province. Whether you need emergency leak repair at 2AM, a water tank fix, or commercial plumbing for your office, one dispatch center routes the right specialist to your door in 60 minutes. One pricing standard. One 6-month workmanship shield. Every job gets a written quote before work begins, with both economy and premium parts options to fit your budget.</p>
-    <p class="text-sm text-gray-500 mb-5">Serving <strong class="text-[#0A2647]">plumbers near me</strong>, <strong class="text-[#0A2647]">plumber colombo</strong>, <strong class="text-[#0A2647]">water tank repair near me</strong>, <strong class="text-[#0A2647]">water heater repair</strong>, and <strong class="text-[#0A2647]">plumbing services near me</strong> searches across Dehiwala, Piliyandala, Kotte, Battaramulla & Maharagama.</p>
-    <div class="flex flex-col sm:flex-row gap-3">
-      <a href="https://wa.me/94758244216?text=SERVICE%20INQUIRY%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-6 rounded-full text-center inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp for Quote</a>
-      <a href="tel:+94758244216" class="bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-full text-center inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Now: +94 75 824 4216</a>
+    <h1 class="font-h1-mobile text-h1-mobile md:font-h1 md:text-h1 text-on-background max-w-2xl">
+      Every Plumbing Job. One Dispatch Number.
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+      30+ services, one rate card, one 6-month shield. Tap a service to see exactly what it costs. No scrolling through unrelated content — just the information you need. <span class="font-bold text-[#0A2647]">60-minute average response</span> for emergency calls.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 mt-4">
+      <a href="tel:+94758244216" class="bg-primary-container text-on-primary-container border-2 border-on-background font-label-caps text-label-caps px-8 py-4 rounded-xl neo-shadow neo-btn flex items-center gap-2">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        CALL DISPATCH
+      </a>
+      <a href="#quote" class="bg-surface-container-high text-on-background border-2 border-on-background font-label-caps text-label-caps px-8 py-4 rounded-xl neo-shadow neo-btn flex items-center gap-2">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        BOOK ONLINE
+      </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- EMERGENCY PLUMBING SERVICES -->
-<section class="py-12 border-t">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-bolt text-red-500 mr-2"></i> Emergency Plumbing Services (24/7)</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Burst pipe repair & flood control</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20BURST%20PIPE%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Midnight leak response (24/7 dispatch)</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20LEAK%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Sewage backup emergency cleanup</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20SEWER%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">No-water-supply troubleshooting</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20NO%20WATER%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Gas leak detection & safety shutdown</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20GAS%20LEAK%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white shadow-sm"><h3 class="font-bold text-lg mb-2">Priority dispatch for Colombo 1-10 suburbs</h3><a href="https://wa.me/94758244216?text=EMERGENCY%20PRIORITY%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp dispatch <i class="fas fa-arrow-right ml-1"></i></a></div>
+  <!-- ====== WHY CHOOSE US ====== -->
+  <section class="bg-surface-container-high border-2 border-on-background rounded-2xl p-8 md:p-12 neo-shadow relative">
+    <div class="absolute -top-4 left-8 bg-[#FFD23F] text-[#0A2647] font-label-caps text-label-caps px-4 py-1 border-2 border-on-background rounded-full transform -rotate-2">
+      WHY SIX7
     </div>
-    <div class="inline-flex items-center gap-2 bg-red-50 px-4 py-2 rounded-full"><i class="fas fa-clock text-red-600"></i><span class="text-sm font-medium">24/7 hotline: +94 75 824 4216</span></div>
-  </div>
-</section>
-
-<!-- LEAK DETECTION & REPAIR -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-tint text-[#F97316] mr-2"></i> Leak Detection & Repair</h2>
-    <div class="grid md:grid-cols-2 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Hidden leak detection (acoustic & thermal)</h3><a href="/leak-detection/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Exposed pipe repair & replacement</h3><a href="/pipe-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Wall/floor leak tracing without damage</h3><a href="https://wa.me/94758244216?text=QUOTE%20LEAK%20DETECTION%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Pressure testing & system diagnostics</h3><a href="https://wa.me/94758244216?text=QUOTE%20PRESSURE%20TEST%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-    </div>
-    <div class="flex justify-between items-center"><p class="font-bold text-lg">LKR 5,000 Dispatch Fee + LKR 3,500/hr</p><a href="https://wa.me/94758244216?text=QUOTE%20LEAK%20REPAIR%20Colombo" class="bg-green-500 text-white px-4 py-2 rounded-full text-sm"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Quote</a></div>
-    <p class="text-xs text-gray-400 mt-3"><i class="fas fa-info-circle mr-1"></i> LKR 5,000 base dispatch fee applies on every dispatch. Full quote provided before work begins.</p>
-  </div>
-</section>
-
-<!-- DRAIN & TOILET SERVICES -->
-<section class="py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-toilet text-[#F97316] mr-2"></i> Drain & Toilet Services</h2>
-    <div class="grid md:grid-cols-2 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Unclog blocked drains, sinks & floor traps</h3><a href="/drain-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Toilet repair: running, leaking, not flushing</h3><a href="/toilet-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Sewer line cleaning & rodding</h3><a href="/sewer-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">High-pressure jetting for stubborn blockages</h3><a href="https://wa.me/94758244216?text=QUOTE%20DRAIN%20JETTING%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-    </div>
-    <div class="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full"><i class="fas fa-tachometer-alt text-blue-600"></i><span class="text-sm font-medium">60 min average response time</span></div>
-  </div>
-</section>
-
-<!-- TAP, FAUCET & FIXTURE INSTALLATION -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-faucet text-[#F97316] mr-2"></i> Tap, Faucet & Fixture Installation</h2>
-    <div class="grid md:grid-cols-2 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">New tap & mixer installation (kitchen/bath)</h3><a href="/tap-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Faucet repair: dripping, leaking, low pressure</h3><a href="/tap-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Shower head & hand shower upgrades</h3><a href="/shower-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Customer-supplied fixture installation (labor-only)</h3><a href="https://wa.me/94758244216?text=QUOTE%20LABOR%20ONLY%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-    </div>
-    <p class="font-bold">Labor billed LKR 3,500/hr | <a href="https://wa.me/94758244216?text=QUOTE%20TAP%20INSTALL%20Colombo" class="text-green-600"><i class="fab fa-whatsapp mr-1"></i> Get Quote via WhatsApp</a></p>
-  </div>
-</section>
-
-<!-- WATER TANK, PUMP & SUPPLY SYSTEMS (including New Filters) -->
-<section class="py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-water text-[#F97316] mr-2"></i> Water Tank, Pump & Supply Systems</h2>
-    <div class="grid md:grid-cols-2 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Water pump repair & replacement (all brands)</h3><a href="/sump-pump-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Overhead & underground tank installation</h3><a href="/water-tank-installation/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Tank cleaning & sediment removal</h3><a href="/water-tank-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Tank replacement: remove old, fit new</h3><a href="/water-tank-replacement/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Whole House Water Filter for Hard Water & Iron</h3><a href="/whole-house-water-filter/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Home Drinking Water Purification (RO systems)</h3><a href="/drinking-water-purification/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Rainwater harvesting plumbing integration</h3><a href="https://wa.me/94758244216?text=QUOTE%20RAINWATER%20SYSTEM%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-    </div>
-    <div class="flex justify-between items-center"><span class="font-bold">Repairs from LKR 3,500/hr</span><a href="tel:+94758244216" class="text-[#0A2647] font-medium"><i class="fas fa-phone-alt mr-1"></i> Call for free estimate</a></div>
-  </div>
-</section>
-
-<!-- COMMERCIAL & INDUSTRIAL PLUMBING -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-[#0A2647]"><i class="fas fa-building text-[#F97316] mr-2"></i> Commercial & Industrial Plumbing</h2>
-    <div class="grid md:grid-cols-2 gap-5 mb-6">
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Office building plumbing maintenance contracts</h3><a href="/commercial/" class="text-[#F97316] text-sm font-medium">Commercial inquiry <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Restaurant & hotel kitchen plumbing systems</h3><a href="/commercial/" class="text-[#F97316] text-sm font-medium">Commercial inquiry <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Grease trap cleaning & maintenance</h3><a href="/grease-trap-cleaning/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Waste disposal repair & installation</h3><a href="/waste-disposal-repair/" class="text-[#F97316] text-sm font-medium">View details <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">Factory pipe welding & industrial supply lines</h3><a href="https://wa.me/94758244216?text=COMMERCIAL%20INDUSTRIAL%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-      <div class="border rounded-xl p-5 bg-white"><h3 class="font-bold text-lg mb-2">After-hours work to minimize disruption</h3><a href="https://wa.me/94758244216?text=COMMERCIAL%20AFTER%20HOURS%20Colombo" class="text-[#F97316] text-sm font-medium">WhatsApp for quote <i class="fas fa-arrow-right ml-1"></i></a></div>
-    </div>
-    <p class="font-bold">Bulk pricing available | <a href="/commercial/" class="text-[#F97316]"><i class="fas fa-chart-line mr-1"></i> Request commercial quote →</a></p>
-  </div>
-</section>
-
-<!-- WHY CHOOSE SIX7 -->
-<section class="py-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-8 text-center text-[#0A2647]">Why Choose SIX7 Plumbing?</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-broadcast-tower text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Managed Dispatch Network</h3><p class="text-sm text-gray-500">We route only vetted, insured, background-checked contractors. One pricing standard, one 6-month shield.</p></div>
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-tag text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Transparent Pricing</h3><p class="text-sm text-gray-500">Written quote before any work starts. No hidden charges.</p></div>
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-clock text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">24/7 Emergency Response</h3><p class="text-sm text-gray-500">Real humans answer at 1AM, weekends, holidays.</p></div>
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-truck-fast text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">60-Minute Arrival</h3><p class="text-sm text-gray-500">For Colombo 1-10. Outer suburbs: 90 minutes max.</p></div>
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-medal text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">6-Month Workmanship Shield</h3><p class="text-sm text-gray-500">Every contractor repair is backed by our shield. If it fails within 6 months, we dispatch a fix free.</p></div>
-      <div class="border rounded-xl p-5 bg-white text-center"><i class="fas fa-map-marked-alt text-[#F97316] text-3xl mb-3"></i><h3 class="font-bold">Local Expertise</h3><p class="text-sm text-gray-500">We know Colombo's older plumbing systems and monsoon challenges.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATION BADGES (SERVICE AREAS) -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6 text-center text-[#0A2647]"><i class="fas fa-map-marker-alt text-[#F97316] mr-2"></i> Service Areas — Plumbers Near You</h2>
-    <p class="text-center text-sm text-gray-500 mb-6 max-w-2xl mx-auto">We cover the entire Western Province with fast arrival times. Searching for <strong>"plumber near me"</strong>? We're likely 15-30 minutes away.</p>
-    <div class="flex flex-wrap justify-center gap-2 mb-6">
-      <a href="/colombo/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Colombo 1-15</a>
-      <a href="/kotte/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Kotte</a>
-      <a href="/battaramulla/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Battaramulla</a>
-      <a href="/dehiwala/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Dehiwala</a>
-      <a href="/mt-lavinia/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Mount Lavinia</a>
-      <a href="/nugegoda/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Nugegoda</a>
-      <a href="/maharagama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Maharagama</a>
-      <a href="/piliyandala/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Piliyandala</a>
-      <a href="/homagama/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Homagama</a>
-      <a href="/kaduwela/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Kaduwela</a>
-      <a href="/padukka/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Padukka</a>
-      <a href="/rathmalana/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Rathmalana</a>
-      <a href="/boralasgamuwa/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Boralesgamuwa</a>
-      <a href="/dehiwala/" class="location-badge bg-white border px-3 py-1 rounded-full text-sm">Moratuwa</a>
-    </div>
-    <div class="text-center"><a href="/areas/" class="text-[#F97316] font-medium">View all service areas <i class="fas fa-arrow-right ml-1"></i></a></div>
-  </div>
-</section>
-
-<!-- QUICK QUOTE FORM -->
-<section class="py-12">
-  <div class="container mx-auto px-4 max-w-2xl">
-    <h2 class="text-2xl font-bold mb-6 text-center">Need a Plumbing Service?</h2>
-    <form action="https://formsubmit.co/plumbing@six7.lk" method="POST" class="space-y-4 bg-white border rounded-xl p-6 shadow-sm">
-      <input type="hidden" name="_subject" value="Services Page Request - plumbing.six7.lk">
-      <input type="hidden" name="_next" value="https://plumbing.six7.lk/thank-you/">
-      <input type="hidden" name="_autoresponse" value="Thanks! We'll WhatsApp you within 15 mins. - Six7 Plumbing">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full px-4 py-2 border rounded-lg">
-      <input type="tel" name="phone" placeholder="Phone Number" pattern="^\+94[0-9]{9}$" required class="w-full px-4 py-2 border rounded-lg">
-      <select name="service_type" required class="w-full px-4 py-2 border rounded-lg">
-        <option value="">Select Service</option>
-        <option value="emergency">Emergency Plumbing</option>
-        <option value="leak-detection">Leak Detection</option>
-        <option value="drain-cleaning">Drain Cleaning</option>
-        <option value="tap-installation">Tap Installation</option>
-        <option value="water-heater-repair">Water Heater Repair</option>
-        <option value="water-tank-repair">Water Tank Repair</option>
-        <option value="whole-house-filter">Whole House Water Filter</option>
-        <option value="commercial">Commercial Project</option>
-      </select>
-      <input type="text" name="suburb" placeholder="Your Suburb" required class="w-full px-4 py-2 border rounded-lg">
-      <textarea name="message" placeholder="Describe your plumbing issue" rows="3" class="w-full px-4 py-2 border rounded-lg"></textarea>
-      <label class="flex items-start gap-2 text-sm"><input type="checkbox" name="terms" required class="mt-1"><span>I agree to the <a href="/disclaimer/" class="underline text-[#F97316]" target="_blank">Pricing Policy & Zero-Tolerance Disclaimer</a>. LKR 5,000 base dispatch fee applies on every dispatch.</span></label>
-      <button type="submit" class="w-full bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 rounded-xl transition"><i class="fas fa-paper-plane mr-2"></i> Request Service</button>
-    </form>
-  </div>
-</section>
-
-<!-- FAQ SECTION -->
-<section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions — Plumbing Services Colombo</h2>
-    <div class="space-y-4">
-      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">How much does a plumber cost in Colombo?</summary><p class="mt-2 text-sm text-gray-600">LKR 5,000 base dispatch fee applies on every dispatch, covering vehicle dispatch, fuel, and first-hour diagnostic. Standard labor is billed at LKR 3,000/hr; most repairs range LKR 3,500-15,000. Written quote before starting.</p></details>
-      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Do you charge extra for nights or weekends?</summary><p class="mt-2 text-sm text-gray-600">After-hours and weekend dispatches carry a +40% surcharge. The dispatch center operates 24/7. LKR 5,000 base dispatch fee applies on every dispatch.</p></details>
-      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Can I use my own parts to save money?</summary><p class="mt-2 text-sm text-gray-600">Yes. Labor-only installation available. The shield covers workmanship; parts warranty is per manufacturer. Labor billed hourly from LKR 3,500/hr.</p></details>
-      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">Are your plumbers licensed and insured?</summary><p class="mt-2 text-sm text-gray-600">Yes. All SIX7 plumbers are vetted, experienced, and covered under public liability insurance. Verified ID on arrival.</p></details>
-      <details class="border rounded-xl p-4 bg-white"><summary class="font-medium">What if I'm not happy with the work?</summary><p class="mt-2 text-sm text-gray-600">6-month workmanship shield. If the same issue recurs, we dispatch a fix free. Pay after you approve the work.</p></details>
-    </div>
-    <div class="text-center mt-8"><a href="/faq/" class="text-[#F97316] font-medium">View all FAQs <i class="fas fa-arrow-right ml-1"></i></a></div>
-  </div>
-</section>
-
-<!-- FINAL CTA SECTION -->
-<section class="py-12 bg-white">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-2xl font-bold mb-6">Ready to Fix Your Plumbing Issue?</h2>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-      <a href="tel:+94758244216" class="bg-[#0A2647] hover:bg-[#1E3A5F] text-white font-bold py-3 px-6 rounded-full inline-flex items-center justify-center gap-2"><i class="fas fa-phone-alt"></i> Call Now: +94 75 824 4216 (24/7)</a>
-      <a href="https://wa.me/94758244216?text=SERVICE%20INQUIRY%20Colombo" class="btn-whatsapp text-white font-bold py-3 px-6 rounded-full inline-flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp: Send photos for quote</a>
-    </div>
-    <p class="text-sm text-gray-500 mb-4"><i class="fas fa-envelope mr-1"></i> Email: plumbing@six7.lk</p>
-    <div class="flex flex-wrap justify-center gap-2 text-sm"><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Free written quotes</span><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-receipt mr-1"></i> LKR 5,000 dispatch fee</span><span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-shield-alt mr-1"></i> 6-month workmanship shield</span></div>
-  </div>
-</section>
-
-<!-- EXTENDED FULL CONTENT FOOTER -->
-<footer class="bg-[#0A2647] text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="grid md:grid-cols-4 gap-10 mb-8">
-      <!-- Areas We Serve -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-map-marker-alt text-[#F97316]"></i> Areas We Serve</h4>
-        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm opacity-80">
-          <li><a href="/colombo/" class="hover:text-[#F97316] transition">Colombo</a></li>
-          <li><a href="/dehiwala/" class="hover:text-[#F97316] transition">Dehiwala</a></li>
-          <li><a href="/piliyandala/" class="hover:text-[#F97316] transition">Piliyandala</a></li>
-          <li><a href="/kotte/" class="hover:text-[#F97316] transition">Kotte</a></li>
-          <li><a href="/battaramulla/" class="hover:text-[#F97316] transition">Battaramulla</a></li>
-          <li><a href="/maharagama/" class="hover:text-[#F97316] transition">Maharagama</a></li>
-          <li><a href="/homagama/" class="hover:text-[#F97316] transition">Homagama</a></li>
-          <li><a href="/kaduwela/" class="hover:text-[#F97316] transition">Kaduwela</a></li>
-          <li><a href="/nugegoda/" class="hover:text-[#F97316] transition">Nugegoda</a></li>
-          <li><a href="/padukka/" class="hover:text-[#F97316] transition">Padukka</a></li>
-          <li><a href="/rathmalana/" class="hover:text-[#F97316] transition">Rathmalana</a></li>
-          <li><a href="/mt-lavinia/" class="hover:text-[#F97316] transition">Mt Lavinia</a></li>
-          <li><a href="/boralasgamuwa/" class="hover:text-[#F97316] transition">Boralesgamuwa</a></li>
-          <li><a href="/dehiwala/" class="hover:text-[#F97316] transition">Moratuwa</a></li>
-        </ul>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <svg class="icon-svg-3xl text-primary-container mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <h4 class="font-h3 text-h3 text-on-surface mt-3">Fast Response</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant">Average 60-minute arrival for emergency calls. We're always on the move.</p>
       </div>
-      <!-- Services We Offer (Categorized) -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-wrench text-[#F97316]"></i> Services</h4>
-        <div class="grid grid-cols-1 gap-1 text-sm opacity-80">
-          <div><span class="font-semibold text-[#F97316]">Leak & Pipe:</span> <a href="/leak-detection/" class="hover:text-[#F97316]">Detection</a>, <a href="/leak-repair/" class="hover:text-[#F97316]">Repair</a>, <a href="/pipe-repair/" class="hover:text-[#F97316]">Pipe Repair</a></div>
-          <div><span class="font-semibold text-[#F97316]">Fixtures:</span> <a href="/tap-installation/" class="hover:text-[#F97316]">Tap Install</a>, <a href="/tap-repair/" class="hover:text-[#F97316]">Repair</a>, <a href="/shower-installation/" class="hover:text-[#F97316]">Shower</a>, <a href="/toilet-installation/" class="hover:text-[#F97316]">Toilet</a></div>
-          <div><span class="font-semibold text-[#F97316]">Water Heating:</span> <a href="/water-heater-installation/" class="hover:text-[#F97316]">Heater Install</a>, <a href="/water-heater-repair/" class="hover:text-[#F97316]">Repair</a></div>
-          <div><span class="font-semibold text-[#F97316]">Drain & Sewer:</span> <a href="/drain-cleaning/" class="hover:text-[#F97316]">Drain Cleaning</a>, <a href="/sewer-cleaning/" class="hover:text-[#F97316]">Sewer Cleaning</a></div>
-          <div><span class="font-semibold text-[#F97316]">Tanks & Pumps:</span> <a href="/water-tank-installation/" class="hover:text-[#F97316]">Tank Install</a>, <a href="/water-tank-cleaning/" class="hover:text-[#F97316]">Cleaning</a>, <a href="/sump-pump-repair/" class="hover:text-[#F97316]">Pump Repair</a></div>
-          <div><span class="font-semibold text-[#F97316]">Specialized:</span> <a href="/whole-house-water-filter/" class="hover:text-[#F97316]">Water Filter</a>, <a href="/drinking-water-purification/" class="hover:text-[#F97316]">RO Systems</a></div>
-          <div><a href="/services/" class="text-[#F97316] text-xs">+ all 32 services →</a></div>
+      <div class="text-center">
+        <svg class="icon-svg-3xl text-primary-container mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+        <h4 class="font-h3 text-h3 text-on-surface mt-3">Licensed Pros</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant">All technicians are fully licensed, insured, and background-checked.</p>
+      </div>
+      <div class="text-center">
+        <svg class="icon-svg-3xl text-primary-container mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 2h16a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2z"/>
+          <polyline points="8 8 16 8"/>
+          <polyline points="8 12 12 12"/>
+          <polyline points="8 16 16 16"/>
+        </svg>
+        <h4 class="font-h3 text-h3 text-on-surface mt-3">Upfront Pricing</h4>
+        <p class="font-body-md text-body-md text-on-surface-variant">No hidden fees. We quote before we start any work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Category -->
+  <section class="flex flex-col gap-8">
+    <div class="flex items-center gap-4">
+      <span class="bg-[#FFD23F] text-on-background border-2 border-on-background font-label-caps text-label-caps uppercase px-4 py-2 transform -rotate-1 inline-block neo-shadow-sm">
+        Emergency Services
+      </span>
+      <div class="h-0.5 bg-on-background flex-grow"></div>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Available 24/7, 365 days a year. Our emergency response team is ready to handle any plumbing disaster.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <!-- burst-pipe-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-error-container rounded-bl-full -z-0"></div>
+        <div class="flex justify-between items-start z-10 relative">
+          <div class="w-12 h-12 bg-error rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-error">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C8 6 4 10 4 14a8 8 0 0016 0c0-4-4-8-8-12z"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 3,500/hr
+          </span>
+        </div>
+        <div class="z-10 relative mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Burst Pipe Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Immediate response to stop water damage. Cut out the burst section, replace, and pressure-test the whole line.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/leak-repair/" class="w-full bg-error text-on-error border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn">
+            View Details
+            <svg class="icon-svg-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
         </div>
       </div>
-      <!-- Quick Links -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-link text-[#F97316]"></i> Quick Links</h4>
-        <ul class="space-y-2 text-sm opacity-80">
-          <li><a href="/emergency/" class="hover:text-[#F97316] transition">Emergency Hub</a></li>
-          <li><a href="/services/" class="hover:text-[#F97316] transition">Services Index</a></li>
-          <li><a href="/pricing/" class="hover:text-[#F97316] transition">Pricing &amp; Terms</a></li>
-          <li><a href="/areas/" class="hover:text-[#F97316] transition">Coverage & ETAs</a></li>
-          <li><a href="/about-us/" class="hover:text-[#F97316] transition">Trust + Team</a></li>
-          <li><a href="/disclaimer/" class="hover:text-[#F97316] transition">Terms & Policy</a></li>
-          <li><a href="/faq/" class="hover:text-[#F97316] transition">FAQ</a></li>
-          <li><a href="/review/" class="hover:text-[#F97316] transition">Leave a Review</a></li>
-        </ul>
+      <!-- drain-unblocking -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-tertiary-container rounded-bl-full -z-0"></div>
+        <div class="flex justify-between items-start z-10 relative">
+          <div class="w-12 h-12 bg-primary rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-primary">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 7l-5 5 4 4 5-5-4-4z"/>
+              <path d="M4 20l7-7"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 7,500/hr
+          </span>
+        </div>
+        <div class="z-10 relative mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Drain Unblocking</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Blocked drains cleared mechanically — no caustic, no shortcuts. High-pressure jetting and rodding for stubborn clogs.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/drain-unblocking/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            View Details
+          </a>
+        </div>
       </div>
-      <!-- Contact Us -->
-      <div>
-        <h4 class="font-bold text-lg mb-4 flex items-center gap-2"><i class="fas fa-envelope text-[#F97316]"></i> Contact Us</h4>
-        <ul class="space-y-3 text-sm opacity-80">
-          <li><a href="tel:+94758244216" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-phone-alt"></i> +94 75 824 4216</a></li>
-          <li><a href="mailto:plumbing@six7.lk" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-envelope"></i> plumbing@six7.lk</a></li>
-          <li><a href="https://wa.me/94758244216" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-          <li><a href="/contact/" class="flex items-center gap-2 hover:text-[#F97316] transition"><i class="fas fa-paper-plane"></i> Contact Form</a></li>
-        </ul>
+      <!-- toilet-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-secondary-container rounded-bl-full -z-0"></div>
+        <div class="flex justify-between items-start z-10 relative">
+          <div class="w-12 h-12 bg-secondary rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-secondary">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 16v4"/>
+              <path d="M8 20h8"/>
+              <path d="M4 8h16"/>
+              <path d="M8 4h8"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 6,500/hr
+          </span>
+        </div>
+        <div class="z-10 relative mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Toilet Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Ghost flushes, running cisterns, base leaks. We dye-test, replace internals, and re-test to stop water waste.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/toilet-repair/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            View Details
+          </a>
+        </div>
+      </div>
+      <!-- leak-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-16 h-16 bg-error-container rounded-bl-full -z-0"></div>
+        <div class="flex justify-between items-start z-10 relative">
+          <div class="w-12 h-12 bg-error rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-error">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 18l2-4 2 4 2-4 2 4 2-4 2 4 2-4 2 4 2-4 2 4"/>
+              <path d="M2 12l2-4 2 4 2-4 2 4 2-4 2 4 2-4 2 4 2-4 2 4"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 3,500/hr
+          </span>
+        </div>
+        <div class="z-10 relative mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Leak Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Burst pipes, dripping joints, hidden slab leaks. Cut out, replace, pressure-test — fixed properly, not patched.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/leak-repair/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            View Details
+          </a>
+        </div>
       </div>
     </div>
-    <div class="border-t border-blue-800 pt-6 text-center text-xs opacity-70">
-      <p>© 2026 SIX7 Plumbing Dispatch Network. All rights reserved. | 6-Month Workmanship Shield | LKR 5,000 Dispatch + LKR 3,000/hr</p>
-      <p class="mt-2"><i class="fas fa-heart text-red-400"></i> Made with <i class="fas fa-heart text-red-400"></i> by SIX7 Team</p>
-      <p class="mt-2"><a href="/disclaimer/" class="underline hover:opacity-100">Pricing Policy & Disclaimer</a> • <a href="/areas/" class="underline hover:opacity-100">Full Coverage Map</a></p>
+  </section>
+
+  <!-- Installation Category -->
+  <section class="flex flex-col gap-8">
+    <div class="flex items-center gap-4">
+      <span class="bg-[#A7F3D0] text-on-background border-2 border-on-background font-label-caps text-label-caps uppercase px-4 py-2 transform rotate-1 inline-block neo-shadow-sm">
+        Installations
+      </span>
+      <div class="h-0.5 bg-on-background flex-grow"></div>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Professional installation of all plumbing fixtures. We work with you to ensure everything is installed correctly and looks great.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <!-- water-tank-installation -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#38BDF8] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform -rotate-3">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            LKR 12,000 + 3,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Water Tank Installation</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Overhead and underground tanks. We build or verify the stand, plumb floats, unions, overflow and vent so the tank can't hurt the house.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/water-tank-installation/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Book Install
+          </a>
+        </div>
+      </div>
+      <!-- water-heater-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#F472B6] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform rotate-3">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2v10"/>
+              <path d="M12 12a4 4 0 100 8 4 4 0 000-8z"/>
+              <path d="M12 20v2"/>
+              <path d="M8 10h8"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 5,700/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Water Heater Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Geyser element, thermostat, and leak fixes. We test each before replacing anything, so you never pay for a part you didn't need.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/water-heater-repair/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Book Install
+          </a>
+        </div>
+      </div>
+      <!-- bathroom-plumbing -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#FDE047] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform -rotate-2">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 16v4"/>
+              <path d="M8 20h8"/>
+              <path d="M4 8h16"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 3,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Bathroom Plumbing</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Toilet, tap, and shower installation. We handle all plumbing connections and ensure everything is watertight and up to code.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/bathroom-plumbing/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Book Install
+          </a>
+        </div>
+      </div>
+      <!-- kitchen-plumbing -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#38BDF8] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform rotate-2">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M8 8h8M8 12h6M8 16h4"/>
+              <line x1="18" y1="8" x2="18" y2="16"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 6,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Kitchen Plumbing</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Sink installations, dishwasher connections, and garbage disposal setup. All connections meet code and work perfectly.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/kitchen-plumbing/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Book Install
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maintenance Category -->
+  <section class="flex flex-col gap-8">
+    <div class="flex items-center gap-4">
+      <span class="bg-[#D8B4FE] text-on-background border-2 border-on-background font-label-caps text-label-caps uppercase px-4 py-2 transform -rotate-1 inline-block neo-shadow-sm">
+        Maintenance
+      </span>
+      <div class="h-0.5 bg-on-background flex-grow"></div>
+    </div>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Keep your plumbing system running smoothly with our comprehensive maintenance services. Prevent problems before they start.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+      <!-- pipe-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#86EFAC] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform rotate-2">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 7l-5 5 4 4 5-5-4-4z"/>
+              <path d="M4 20l7-7"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 3,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Pipe Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">PVC, copper and PPR pipe fixes. UV-rated replacement for external runs, pressure-tested before we leave.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/pipe-repair/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Schedule
+          </a>
+        </div>
+      </div>
+      <!-- drain-cleaning -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#FCA5A5] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform -rotate-3">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 21l3-3M9 15l3-3M15 9l3-3M21 3l-3 3"/>
+              <circle cx="12" cy="12" r="4"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 7,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Drain Cleaning</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Mechanical rodding and jetting — never chemicals. Includes flow-test so you watch it drain before we leave.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/drain-cleaning/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Schedule
+          </a>
+        </div>
+      </div>
+      <!-- annual-plumbing-inspections -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#86EFAC] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform -rotate-2">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            LKR 4,500
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Annual Plumbing Inspections</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">21-point photo report with fixed price per fault. Fee waived with any same-visit repair. Know every fault before it becomes a flood.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/annual-plumbing-inspections/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Schedule
+          </a>
+        </div>
+      </div>
+      <!-- sump-pump-repair -->
+      <div class="bg-surface border-2 border-on-background rounded-xl p-6 flex flex-col gap-4 neo-shadow hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_0px_#1e1b14] transition-all duration-200 cursor-pointer group relative">
+        <div class="flex justify-between items-start">
+          <div class="w-12 h-12 bg-[#FCA5A5] rounded-full border-2 border-on-background flex items-center justify-center neo-shadow-sm text-on-background transform rotate-3">
+            <svg class="icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2v10"/>
+              <path d="M12 12a4 4 0 100 8 4 4 0 000-8z"/>
+              <path d="M12 20v2"/>
+            </svg>
+          </div>
+          <span class="bg-surface-variant text-on-surface-variant border-2 border-on-background font-label-caps text-label-caps px-3 py-1 rounded-full text-xs">
+            From LKR 6,500/hr
+          </span>
+        </div>
+        <div class="mt-2">
+          <h3 class="font-h3 text-h3 text-on-background mb-2">Sump Pump Repair</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Humming but no water? Motor, switch, and float fixes. We test motor, free or replace the float, and run-test under load.</p>
+        </div>
+        <div class="mt-auto pt-4 z-10 relative">
+          <a href="/sump-pump-repair/" class="w-full bg-surface text-on-background border-2 border-on-background py-3 rounded-lg font-label-caps text-label-caps uppercase tracking-wider flex justify-center items-center gap-2 neo-btn hover:bg-surface-variant">
+            Schedule
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ SECTION ====== -->
+  <section class="bg-surface-container-low border-2 border-on-background rounded-2xl p-8 md:p-12 neo-shadow" id="faq">
+    <div class="text-center mb-8">
+      <div class="inline-block bg-[#FFD23F] text-[#0A2647] font-label-caps text-label-caps px-4 py-1 border-2 border-on-background rounded-full mb-4 transform rotate-1">
+        COMMON QUESTIONS
+      </div>
+      <h2 class="font-h2 text-h2 text-on-background">Frequently Asked Questions</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-2">Everything you need to know about our plumbing services.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-surface border-2 border-on-background rounded-xl overflow-hidden">
+        <input class="accordion-toggle hidden" id="faq1" type="checkbox"/>
+        <label class="accordion-label p-5 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors" for="faq1">
+          <span class="font-h3 text-h3 text-on-background text-lg">Do you offer same-day service?</span>
+          <svg class="icon-svg icon-expand transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </label>
+        <div class="accordion-content p-5 pt-0 border-t-2 border-on-background bg-surface-container-low">
+          <p class="font-body-md text-body-md text-on-surface-variant mt-4">Yes! For emergency repairs, we aim to have a technician at your door within 60 minutes. For non-emergency installations, we usually schedule within 24-48 hours.</p>
+        </div>
+      </div>
+      <div class="bg-surface border-2 border-on-background rounded-xl overflow-hidden">
+        <input class="accordion-toggle hidden" id="faq2" type="checkbox"/>
+        <label class="accordion-label p-5 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors" for="faq2">
+          <span class="font-h3 text-h3 text-on-background text-lg">Are your plumbers licensed and insured?</span>
+          <svg class="icon-svg icon-expand transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </label>
+        <div class="accordion-content p-5 pt-0 border-t-2 border-on-background bg-surface-container-low">
+          <p class="font-body-md text-body-md text-on-surface-variant mt-4">Absolutely. All our technicians are fully licensed, insured, and background-checked. We also carry liability insurance for your peace of mind.</p>
+        </div>
+      </div>
+      <div class="bg-surface border-2 border-on-background rounded-xl overflow-hidden">
+        <input class="accordion-toggle hidden" id="faq3" type="checkbox"/>
+        <label class="accordion-label p-5 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors" for="faq3">
+          <span class="font-h3 text-h3 text-on-background text-lg">What areas do you serve?</span>
+          <svg class="icon-svg icon-expand transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </label>
+        <div class="accordion-content p-5 pt-0 border-t-2 border-on-background bg-surface-container-low">
+          <p class="font-body-md text-body-md text-on-surface-variant mt-4">We serve the entire Colombo district, Western Province, and surrounding areas including Dehiwala, Mount Lavinia, Nugegoda, Kotte, and Kalutara. Call us to confirm coverage for your specific location.</p>
+        </div>
+      </div>
+      <div class="bg-surface border-2 border-on-background rounded-xl overflow-hidden">
+        <input class="accordion-toggle hidden" id="faq4" type="checkbox"/>
+        <label class="accordion-label p-5 flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors" for="faq4">
+          <span class="font-h3 text-h3 text-on-background text-lg">Do you offer a warranty on your work?</span>
+          <svg class="icon-svg icon-expand transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </label>
+        <div class="accordion-content p-5 pt-0 border-t-2 border-on-background bg-surface-container-low">
+          <p class="font-body-md text-body-md text-on-surface-variant mt-4">Yes! We stand behind our work with a 6-month workmanship warranty on all repairs and installations. Manufacturer warranties also apply to any new parts installed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Banner -->
+  <section class="w-full bg-surface-container-high border-2 border-on-background rounded-xl neo-shadow flex items-center justify-center overflow-hidden relative py-12">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#1e1b14_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="flex flex-col items-center gap-4 z-10 px-6 text-center">
+      <div class="flex gap-2 text-[#FFD23F]">
+        <svg class="icon-svg-sm text-[#FFD23F]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="icon-svg-sm text-[#FFD23F]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="icon-svg-sm text-[#FFD23F]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="icon-svg-sm text-[#FFD23F]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg class="icon-svg-sm text-[#FFD23F]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="font-h3 text-h3 text-on-surface-variant">All Work Guaranteed • Licensed Plumbers • Upfront Pricing</p>
+      <p class="font-body-md text-body-md text-on-surface-variant">Join thousands of satisfied customers across Colombo</p>
+      <a href="tel:+94758244216" class="bg-primary-container text-on-primary-container border-2 border-on-background font-label-caps text-label-caps px-8 py-4 rounded-xl neo-shadow neo-btn flex items-center gap-2 mt-2">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        CALL NOW
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer id="uniform-footer" class="mt-16 bg-[#0A2647] text-white rounded-t-[24px] border-2 border-[#0A2647] px-6 py-10">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <p class="font-black text-lg mb-3" style="font-family:'Work Sans',sans-serif;"><span class="text-[#F97316]">SIX7</span>.PLUMBING</p>
+      <p class="opacity-80 mb-4">24/7 emergency plumbing dispatch network for Colombo &amp; Western Province. Vetted contractors, transparent rates.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="bg-[#FFD23F] text-[#0A2647] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0A2647]">4.9★ Rated</span>
+        <span class="bg-[#2EC4B6] text-[#0A2647] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0A2647]">6-Month Shield</span>
+        <span class="bg-[#F97316] text-white text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0A2647]">60-Min Arrival</span>
+      </div>
+    </div>
+    <div>
+      <p class="font-bold text-[#FFD23F] mb-3 uppercase text-xs tracking-wider">Services</p>
+      <ul class="space-y-2 opacity-90">
+        <li><a href="/leak-repair/">Leak Repair</a></li>
+        <li><a href="/drain-cleaning/">Drain Cleaning</a></li>
+        <li><a href="/water-tank-installation/">Water Tanks</a></li>
+        <li><a href="/water-heater-repair/">Water Heaters</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/emergency/">Emergency</a></li>
+        <li><a href="/services/">All Services →</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-[#FFD23F] mb-3 uppercase text-xs tracking-wider">Areas</p>
+      <ul class="space-y-2 opacity-90">
+        <li><a href="/colombo/">Colombo</a></li>
+        <li><a href="/dehiwala/">Dehiwala</a></li>
+        <li><a href="/kotte/">Kotte</a></li>
+        <li><a href="/nugegoda/">Nugegoda</a></li>
+        <li><a href="/areas/">All Areas →</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-[#FFD23F] mb-3 uppercase text-xs tracking-wider">Contact 24/7</p>
+      <ul class="space-y-2 opacity-90">
+        <li><a href="tel:+94758244216">
+          <svg class="icon-svg inline mr-2 text-[#2EC4B6]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +94 75 824 4216
+        </a></li>
+        <li><a href="https://wa.me/94758244216" rel="noopener">
+          <svg class="icon-svg inline mr-2 text-[#22C55E]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 4.244 2.204 7.957 5.494 10.076l-.754 3.736 3.905-2.005c1.066.33 2.207.508 3.355.508 6.627 0 12-5.373 12-12S18.627 0 12 0zm0 3.564c4.657 0 8.436 3.779 8.436 8.436s-3.779 8.436-8.436 8.436c-1.481 0-2.885-.385-4.107-1.066l-2.461 1.263.619-2.954C4.385 16.423 3.564 14.283 3.564 12c0-4.657 3.779-8.436 8.436-8.436z"/></svg>
+          WhatsApp Dispatch
+        </a></li>
+        <li><a href="mailto:plumbing@six7.lk">
+          <svg class="icon-svg inline mr-2 text-[#FFD23F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          plumbing@six7.lk
+        </a></li>
+        <li><a href="/jobs/">
+          <svg class="icon-svg inline mr-2 text-[#F97316]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          Latest Jobs
+        </a></li>
+      </ul>
     </div>
   </div>
+  <p class="text-center text-xs opacity-60 mt-8">© 2026 SIX7 Plumbing Dispatch Network • Mt Lavinia, Colombo • Callout fee applies to all dispatches</p>
 </footer>
 
-<script>
-  const menuBtn = document.getElementById('mobileMenuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const overlay = document.getElementById('mobileMenuOverlay');
-  const closeBtn = document.getElementById('closeMobileMenu');
-  function openMenu() { mobileMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-  function closeMenu() { mobileMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; }
-  if(menuBtn) menuBtn.addEventListener('click', openMenu);
-  if(closeBtn) closeBtn.addEventListener('click', closeMenu);
-  if(overlay) overlay.addEventListener('click', closeMenu);
-</script>
-  <script src="/emergency.js"></script>
+<div id="uniform-bottom-bar" class="fixed bottom-0 inset-x-0 z-50 md:hidden grid grid-cols-2 gap-2 p-2 bg-[#FBF3E7] border-t-2 border-[#0A2647]">
+  <a href="tel:+94758244216" class="bg-[#EF4444] text-white text-center font-bold py-3 rounded-full border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647] inline-flex items-center justify-center gap-2">
+    <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+    Call Now
+  </a>
+  <a href="https://wa.me/94758244216?text=EMERGENCY%20PLUMBING%20NEEDED" rel="noopener" class="bg-[#22C55E] text-white text-center font-bold py-3 rounded-full border-2 border-[#0A2647] shadow-[3px_3px_0_#0A2647] inline-flex items-center justify-center gap-2">
+    <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 4.244 2.204 7.957 5.494 10.076l-.754 3.736 3.905-2.005c1.066.33 2.207.508 3.355.508 6.627 0 12-5.373 12-12S18.627 0 12 0zm0 3.564c4.657 0 8.436 3.779 8.436 8.436s-3.779 8.436-8.436 8.436c-1.481 0-2.885-.385-4.107-1.066l-2.461 1.263.619-2.954C4.385 16.423 3.564 14.283 3.564 12c0-4.657 3.779-8.436 8.436-8.436z"/>
+    </svg>
+    WhatsApp
+  </a>
+</div>
+
 </body>
 </html>
